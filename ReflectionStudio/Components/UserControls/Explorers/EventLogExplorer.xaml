@@ -1,0 +1,58 @@
+﻿<ad:DockableContent x:Class="ReflectionStudio.Components.UserControls.EventLogExplorer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit"
+    xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:controls="clr-namespace:ReflectionStudio.Controls;assembly=ReflectionStudio.Controls"
+    xmlns:events="clr-namespace:ReflectionStudio.Core.Events;assembly=ReflectionStudio.Core"
+    xmlns:converters="clr-namespace:ReflectionStudio.Components.Converters"
+    Title="Logs" DockableStyle="DockableToBorders"
+    Icon="/ReflectionStudio;component/Resources/Images/16x16/logs.png">
+    <ad:DockableContent.Resources>
+
+        <ObjectDataProvider x:Key="LogLevelData"
+                    MethodName="GetValues" 
+                    ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="events:MessageEventType" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+    </ad:DockableContent.Resources>
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Margin="5">View:</TextBlock>
+                <ComboBox Name="cbLogLevel" IsReadOnly="True" SelectedIndex="3" Margin="1"
+                            ItemsSource="{Binding Source={StaticResource LogLevelData}}"
+                            SelectedItem="{Binding Path=Workspace.LogLevel, Mode=TwoWay}" 
+                          />
+                <controls:FlatImageButton Click="BtnClear_Click" ToolTip="Clear all the logs"
+                        Image="/ReflectionStudio;component/Resources/Images/16x16/application/delete.png">Clear</controls:FlatImageButton>
+            </StackPanel>
+        </DockPanel>
+        <my:DataGrid Grid.Row="1" Name="dataGridLogEvent"
+                    AutoGenerateColumns="False" EnableRowVirtualization="True"
+                    EnableColumnVirtualization="True" CanUserSortColumns="True">
+            <!-- Column definition -->
+            <my:DataGrid.Columns>
+                <my:DataGridTemplateColumn Header="" Width="SizeToCells">
+                    <my:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Type, Mode=OneWay, Converter={x:Static converters:LogTypeToImageConverter.Instance}}"></Image>
+                        </DataTemplate>
+                    </my:DataGridTemplateColumn.CellTemplate>
+                </my:DataGridTemplateColumn>
+                <my:DataGridTextColumn Header="Time" Binding="{Binding When, Mode=OneWay}" Width="SizeToCells" />
+                <my:DataGridTextColumn Header="Where" Binding="{Binding Where, Mode=OneWay}" Width="*" />
+                <my:DataGridTextColumn Header="Details" Binding="{Binding Details, Mode=OneWay}" Width="*" />
+            </my:DataGrid.Columns>
+        </my:DataGrid>
+    </Grid>
+</ad:DockableContent>

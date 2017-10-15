@@ -1,0 +1,138 @@
+﻿<ad:DockableContent x:Class="ReflectionStudio.Components.UserControls.ProjectExplorer"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+            xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+            xmlns:converters="clr-namespace:ReflectionStudio.Components.Converters"
+            xmlns:controls="clr-namespace:ReflectionStudio.Controls;assembly=ReflectionStudio.Controls"
+            Title="Project" IsCloseable="true" 
+            mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300"
+            Icon="/ReflectionStudio;component/Resources/Images/16x16/new_project.png" >
+
+    <ad:DockableContent.Resources>
+
+        <Style x:Key="{x:Type TreeViewItem}" TargetType="{x:Type TreeViewItem}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource NormalForegroundBrush}"/>
+            <Setter Property="FocusVisualStyle" Value="{DynamicResource TreeViewExtendedItemFocusVisual}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TreeViewItem}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="19" Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <ToggleButton x:Name="Expander" Style="{DynamicResource TreeViewExtendedItemExpandCollapseToggleStyle}"
+                                IsChecked="{Binding Path=IsExpanded,
+                                RelativeSource={RelativeSource TemplatedParent}}"
+                                ClickMode="Press"/>
+                            <Border Name="Bd"
+                                  Grid.Column="1"
+                                  Background="{TemplateBinding Background}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                  Padding="{TemplateBinding Padding}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image x:Name="PART_Image" VerticalAlignment="Center" Width="16" Height="16" Margin="0,0,5,0"
+                                           Source="{TemplateBinding Tag, Converter={x:Static converters:FileInfoToImageConverter.Instance},
+                                                                        ConverterParameter='Closed'}" />
+                                    <ContentPresenter x:Name="PART_Header"
+                                          ContentSource="Header"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+                                </StackPanel>
+                            </Border>
+                            <ItemsPresenter x:Name="ItemsHost"
+                                  Grid.Row="1"
+                                  Grid.Column="1"
+                                  Grid.ColumnSpan="2"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsExpanded" Value="false">
+                                <Setter TargetName="ItemsHost" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                            <Trigger Property="IsExpanded" Value="true">
+                                <Setter TargetName="PART_Image" Property="Source"
+                                        Value="{Binding  Path=Tag, RelativeSource={RelativeSource TemplatedParent}, Converter={x:Static converters:FileInfoToImageConverter.Instance},
+                                                                        ConverterParameter='Open'}"/>
+                            </Trigger>
+                            <Trigger Property="HasItems" Value="false">
+                                <Setter TargetName="Expander" Property="Visibility" Value="Hidden"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="HasHeader" Value="false"/>
+                                    <Condition Property="Width" Value="Auto"/>
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="PART_Header" Property="MinWidth" Value="75"/>
+                            </MultiTrigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="HasHeader" Value="false"/>
+                                    <Condition Property="Height" Value="Auto"/>
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="PART_Header" Property="MinHeight" Value="19"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource SelectedBackgroundBrush}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource SelectedForegroundBrush}"/>
+                            </Trigger>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="true"/>
+                                    <Condition Property="IsSelectionActive" Value="false"/>
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="Bd" Property="Background" Value="{DynamicResource SelectedBackgroundBrush}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource SelectedForegroundBrush}"/>
+                            </MultiTrigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource DisabledBackgroundBrush}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </ad:DockableContent.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal">
+
+            <controls:FlatImageButton Image="/ReflectionStudio;component/Resources/Images/16x16/database/new_db.png"
+                                      ToolTip=""/>
+            <controls:FlatImageButton Image="/ReflectionStudio;component/Resources/Images/16x16/application/refresh.png"
+                                      ToolTip=""/>
+            <controls:FlatImageButton Image="/ReflectionStudio;component/Resources/Images/16x16/application/delete.png"
+                                      ToolTip=""/>
+        </StackPanel>
+
+        <controls:TreeViewExtended Name="treeViewTemplate" Grid.Row="2" Tag="{Binding RelativeSource={RelativeSource Self}, Path=SelectedItem.Tag}">
+            <TreeView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Open" Command="Open"
+                              CommandParameter="{Binding Tag}"
+                              DataContext="{Binding Path=PlacementTarget, RelativeSource={RelativeSource AncestorType={x:Type ContextMenu}}}"/>
+                    <Separator></Separator>
+                    <MenuItem Header="Add">
+                        <MenuItem Header="New template"/>
+                        <MenuItem Header="Existing template"/>
+                    </MenuItem>
+                    <Separator></Separator>
+                    <MenuItem Header="Delete"/>
+                </ContextMenu>
+            </TreeView.ContextMenu>
+        </controls:TreeViewExtended>
+
+    </Grid>
+</ad:DockableContent>

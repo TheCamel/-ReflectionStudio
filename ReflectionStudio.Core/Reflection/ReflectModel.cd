@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="ReflectionStudio.Core.Reflection.Types.NetReference" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reflection\Types\NetReference.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Reflection.Types.NetNamespace" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reflection\Types\NetNamespace.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Reflection.Types.NetMethod">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Reflection\Types\NetMethod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Reflection.Types.NetInterface" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reflection\Types\NetInterface.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Reflection.Types.NetEnum" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reflection\Types\NetEnum.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Reflection.Types.NetClass" Collapsed="true">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reflection\Types\NetClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Reflection.Types.NetBaseType">
+    <Position X="2.5" Y="2.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAgAEAAAAAAAARAAAAAAAAIAAAAAAQACAA=</HashCode>
+      <FileName>Reflection\Types\NetBaseType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Reflection.Types.NetAssembly">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>MAAAAEEAAAJAQAAAAAAAEgQAAQAQAAAAAABBAAAQAAA=</HashCode>
+      <FileName>Reflection\Types\NetAssembly.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Reflection.Types.NetParameter" Collapsed="true">
+    <Position X="4.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reflection\Types\NetParameter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Reflection.AssemblyParserFactory">
+    <Position X="0.5" Y="6.75" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Reflection\AssemblyParserFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Reflection.Parser.NetAssemblyParser">
+    <Position X="5.5" Y="7.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAIACACAAAAAAAAAAAAEQAAAAEAAAgEAAAAAEIAAA=</HashCode>
+      <FileName>Reflection\Parser\Net\NetAssemblyParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ReflectionStudio.Core.Reflection.CecilAssemblyParser">
+    <Position X="7.5" Y="7.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>QAAAIACACAAAACABAABAIEQAACAEAAAgAAAAAAEIAAA=</HashCode>
+      <FileName>Reflection\Parser\Cecil\CecilAssemblyParser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ReflectionStudio.Core.Reflection.AssemblyBackgroundWorkerParser">
+    <Position X="2.5" Y="8.25" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAABAAAQAAAAEAEAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Reflection\AssemblyBackgroundWorkerParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.BindableObjectExtended" Collapsed="true">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAAAAAUQAAAAAAAAAAAAAAAgAAAgAA=</HashCode>
+      <FileName>Binding\BindableObjectExtended.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.BindableObject" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACQAIAAAEAAAAAAAAAgAAQCAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Binding\BindableObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ReflectionStudio.Core.Reflection.IAssemblyParser">
+    <Position X="0.5" Y="8.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAIACACAAAAAAAAAAAAEQAAAAEAAAgAAAAAAEAAAA=</HashCode>
+      <FileName>Reflection\IAssemblyParser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

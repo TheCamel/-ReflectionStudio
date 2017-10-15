@@ -1,0 +1,41 @@
+﻿<ucd:HeaderedDialogWindow x:Class="ReflectionStudio.Components.Dialogs.About.AboutBoxDlg"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:ucd="clr-namespace:ReflectionStudio.Controls;assembly=ReflectionStudio.Controls"
+    Title="About..."
+    DialogDescription="...software and the author"
+    DialogImage="/ReflectionStudio;component/Resources/Images/32x32/information.png"
+    Height="500" Width="476" 
+    Loaded="Window_Loaded">
+    
+    <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="128" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition />
+                <RowDefinition Height="30" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MinWidth="127.5" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0" Grid.Column="0" Stretch="Uniform" Source="/ReflectionStudio;component/Resources/Images/128x128/reflection_studio.png" />
+            <Label Grid.Column="1" FontWeight="Bold" FontSize="25" Margin="33,0,0,0" Height="41" VerticalAlignment="Top">Reflection Studio</Label>
+            <Label Grid.Column="1" Margin="33,47,11,57" >.NET Performance injection software</Label>
+            <ucd:WebLink Grid.Column="1" Margin="33,0,11,23" Height="23" VerticalAlignment="Bottom" Text="http://reflectionstudio.codeplex.com" Uri="http://reflectionstudio.codeplex.com" />
+
+            <Label Content="Version" Grid.Row="1" />
+            <Label Grid.Column="1" Name="labelApplicationVersion" Grid.Row="1">1.0</Label>
+            
+            <Label Grid.Row="2" Content="Copyright ©"/>
+            <Label Grid.Column="1" Grid.Row="2" Name="labelApplicationCopyright">2009-2010 Guillaume Waser</Label>
+            
+            <Label Grid.Row="3" VerticalAlignment="Top">Assemblies</Label>
+            <ListBox Grid.Column="1" Grid.Row="3" Name="listBoxAssembliesList" Margin="0,0,0,6"></ListBox>
+        
+            <Button Grid.Column="1" Grid.Row="4"
+                    x:Name="BtnOk" Click="close_Click" IsDefault="True" ToolTip="Close this dialog" Content="Close" />
+        </Grid>
+</ucd:HeaderedDialogWindow>

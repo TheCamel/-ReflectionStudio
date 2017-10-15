@@ -1,0 +1,50 @@
+﻿<ucd:HeaderedDialogWindow x:Class="ReflectionStudio.Components.Dialogs.NewDocumentDlg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ucd="clr-namespace:ReflectionStudio.Controls;assembly=ReflectionStudio.Controls"
+        xmlns:cls="clr-namespace:ReflectionStudio.Classes"
+        DialogDescription="Select a document type"
+        DialogImage="/ReflectionStudio;component/Resources/Images/32x32/information.png"                          
+        Title="New document..." Height="396" Width="436">
+
+    <ucd:HeaderedDialogWindow.Resources>
+
+        <DataTemplate x:Key="DocItemTemplate" DataType="{x:Type cls:SupportedDocumentInfo}">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="35"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Source="{Binding Image}" Margin="3" VerticalAlignment="Top"/>
+                <StackPanel Grid.Column="1" Orientation="Vertical">
+                    <TextBlock Text="{Binding ShortDescription}" FontWeight="Bold" Foreground="{DynamicResource NormalForegroundBrush}"/>
+                    <TextBlock Text="{Binding LongDescription}" Foreground="{DynamicResource NormalForegroundBrush}" ></TextBlock>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+    </ucd:HeaderedDialogWindow.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <ListBox Grid.Row="0" Name="listBoxDocType"
+                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                 Margin="4"
+                 ItemTemplate="{StaticResource DocItemTemplate}"
+                 ItemsSource="{Binding}"
+                 />
+
+        <TextBlock Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="12,0,0,0" Name="textBlock1" Text="File Name" VerticalAlignment="Center" />
+        <TextBox Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="68,0,0,0" Name="textBox1" VerticalAlignment="Center" Width="334" />
+
+        <Button Grid.Row="2" Height="23" Width="80" HorizontalAlignment="Right" Margin="0,0,15,0" Click="btnOk_Click">Add</Button>
+        <Button Grid.Row="2" Height="23" Width="80" HorizontalAlignment="Right" Margin="0,0,110,0" Click="btnCancel_Click">Cancel</Button>
+    </Grid>
+</ucd:HeaderedDialogWindow>

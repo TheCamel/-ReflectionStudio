@@ -1,0 +1,759 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8920DCC3-654F-4A15-9410-006BB076C6F8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReflectionStudio</RootNamespace>
+    <AssemblyName>ReflectionStudio</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ApplicationIcon>Resources\ReflectionStudio.ico</ApplicationIcon>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>false</GenerateManifests>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\ReflectionStudio.XML</DocumentationFile>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\ReflectionStudio.XML</DocumentationFile>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AvalonDock, Version=1.2.2691.0, Culture=neutral, PublicKeyToken=85a1e0ada7ec13e4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeReason.Reports">
+      <HintPath>..\Dependencies\CodeReason.Reports.dll</HintPath>
+    </Reference>
+    <Reference Include="Fluent, Version=1.3.1.0, Culture=neutral, PublicKeyToken=3e436e32a8c5546f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.AvalonEdit">
+      <HintPath>..\Dependencies\ICSharpCode.AvalonEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="ReachFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationTypes">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Components\Dialogs\About\AboutBoxDlg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\Dialogs\Database\DependencyDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\Dialogs\Database\NewDataSourceDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\Dialogs\Database\ProviderChoiceDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\Dialogs\NewDocumentDlg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\Dialogs\Project\NewProjectDlg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\Dialogs\Project\SnapshotListDlg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\Dialogs\Startup\StartupDlg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Documents\Database\QueryDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\UserControls\Documents\General\HelpDocument.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Documents\General\HomeDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Documents\Project\Panels\AssemblyDetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Documents\Project\Panels\BuildOption.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Documents\Project\Panels\SumerizeBuild.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Documents\Project\ProjectDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Documents\Reflection\AssemblyDiagramViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Documents\Report\XpsReportDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\UserControls\Documents\Template\TemplateDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\UserControls\Explorers\AssemblyExplorer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Documents\Snapshot\Panels\GridView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Documents\Snapshot\Panels\VisualView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Documents\Snapshot\SnapshotViewDocument.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Explorers\DatabaseExplorer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\UserControls\Explorers\ProjectExplorer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\UserControls\Explorers\PropertyExplorer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\UserControls\Explorers\TemplateExplorer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Components\UserControls\StatusBar\StatusBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Components\UserControls\Explorers\EventLogExplorer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\AssemblyDesignerItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DefaultThemeDataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <EmbeddedResource Include="Resources\Embedded\Home.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Page Include="Resources\Dictionnaries\AvalonDock.Glossy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Dictionnaries\AvalonDock.Studio.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Dictionnaries\AvalonDock.Expression.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="..\AssemblyInfoVersion.cs">
+      <Link>Properties\AssemblyInfoVersion.cs</Link>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Classes\Services\DataContext\DocumentDataContext.cs" />
+    <Compile Include="Classes\Services\DataContext\HelpDocumentDataContext.cs" />
+    <Compile Include="Classes\Services\DataContext\HomeDocumentDataContext.cs" />
+    <Compile Include="Classes\Services\DataContext\TemplateDocumentDataContext.cs" />
+    <Compile Include="Classes\Services\DataContext\XpsDocumentDataContext.cs" />
+    <Compile Include="Classes\Services\DocumentFactory.cs" />
+    <Compile Include="Classes\Services\FileService\TextFileService.cs" />
+    <Compile Include="Classes\Services\FileService\XpsFileService.cs" />
+    <Compile Include="Classes\Services\DataContext\IDocumentDataContext.cs" />
+    <Compile Include="Classes\Services\FileService\IFileService.cs" />
+    <Compile Include="Classes\Services\SupportedDocumentInfo.cs" />
+    <Compile Include="Classes\Workspace\RecentFileItem.cs" />
+    <Compile Include="Classes\Workspace\WorkspaceDAC.cs" />
+    <Compile Include="Classes\Workspace\WorkspaceEntity.cs" />
+    <Compile Include="Classes\Workspace\WorkspaceService.cs" />
+    <Compile Include="Components\Converters\DBTypeToImageConverter.cs" />
+    <Compile Include="Components\Converters\DockStateToBooleanConverter.cs" />
+    <Compile Include="Components\Converters\FileInfoToImageConverter.cs" />
+    <Compile Include="Components\Converters\ObjectToBooleanConverter.cs" />
+    <Compile Include="Components\Converters\ScaleToPercentConverter.cs" />
+    <Compile Include="Components\Dialogs\Database\DependencyDialog.xaml.cs">
+      <DependentUpon>DependencyDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Dialogs\Database\NewDataSourceDialog.xaml.cs">
+      <DependentUpon>NewDataSourceDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Dialogs\Database\ProviderChoiceDialog.xaml.cs">
+      <DependentUpon>ProviderChoiceDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Dialogs\NewDocumentDlg.xaml.cs">
+      <DependentUpon>NewDocumentDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\Database\QueryContext.cs" />
+    <Compile Include="Components\UserControls\Documents\Database\QueryDocument.xaml.cs">
+      <DependentUpon>QueryDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Services\DataContext\QueryDocumentDataContext.cs" />
+    <Compile Include="Components\UserControls\Documents\Database\QueryWorker.cs" />
+    <Compile Include="Components\UserControls\Documents\DocumentBase.cs" />
+    <Compile Include="Classes\Services\DataContext\XpsGeneratedDocumentDataContext.cs" />
+    <Compile Include="Components\UserControls\Documents\Report\XpsReportDocument.xaml.cs">
+      <DependentUpon>XpsReportDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\SyntaxedTextEditor.cs" />
+    <Compile Include="Components\UserControls\Documents\Template\TemplateDocument.xaml.cs">
+      <DependentUpon>TemplateDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\ZoomDocument.cs" />
+    <Compile Include="Components\UserControls\Explorers\DatabaseExplorer.xaml.cs">
+      <DependentUpon>DatabaseExplorer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Explorers\ProjectExplorer.xaml.cs">
+      <DependentUpon>ProjectExplorer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Explorers\PropertyExplorer.xaml.cs">
+      <DependentUpon>PropertyExplorer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Explorers\TemplateExplorer.xaml.cs">
+      <DependentUpon>TemplateExplorer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Converters\LogTypeToImageConverter.cs" />
+    <Compile Include="Components\Dialogs\Project\SnapshotListDlg.xaml.cs">
+      <DependentUpon>SnapshotListDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\Reflection\AssemblyDiagramViewer.xaml.cs">
+      <DependentUpon>AssemblyDiagramViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Explorers\AssemblyExplorer.xaml.cs">
+      <DependentUpon>AssemblyExplorer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Converters\NetTypeToImageConverter.cs" />
+    <Compile Include="Components\UserControls\Documents\Reflection\ReflectDesigner.cs" />
+    <Compile Include="Components\UserControls\Documents\Reflection\ReflectDesignItem.cs" />
+    <Compile Include="MainWindow.xaml.Commands.Others.cs" />
+    <Compile Include="MainWindow.xaml.Commands.Snapshot.cs" />
+    <Compile Include="Classes\BindingView.cs" />
+    <Compile Include="Components\Dialogs\About\AboutBoxDlg.xaml.cs">
+      <DependentUpon>AboutBoxDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Dialogs\Project\NewProjectDlg.xaml.cs">
+      <DependentUpon>NewProjectDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Dialogs\Startup\StartupDlg.xaml.cs">
+      <DependentUpon>StartupDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\General\HelpDocument.xaml.cs">
+      <DependentUpon>HelpDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\General\HomeDocument.xaml.cs">
+      <DependentUpon>HomeDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\Project\Panels\AssemblyDetail.xaml.cs">
+      <DependentUpon>AssemblyDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\Project\Panels\BuildOption.xaml.cs">
+      <DependentUpon>BuildOption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\Project\Panels\SumerizeBuild.xaml.cs">
+      <DependentUpon>SumerizeBuild.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\Project\ProjectDocument.xaml.cs">
+      <DependentUpon>ProjectDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\Snapshot\Panels\GridView.xaml.cs">
+      <DependentUpon>GridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\Snapshot\Panels\VisualView.xaml.cs">
+      <DependentUpon>VisualView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Documents\Snapshot\SnapshotViewDocument.xaml.cs">
+      <DependentUpon>SnapshotViewDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\StatusBar\StatusBar.xaml.cs">
+      <DependentUpon>StatusBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UserControls\Explorers\EventLogExplorer.xaml.cs">
+      <DependentUpon>EventLogExplorer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.Commands.Project.cs" />
+    <Compile Include="MainWindow.xaml.Commands.Application.cs" />
+    <Compile Include="MainWindow.xaml.Commands.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Classes\Services\DocumentFactory.cd" />
+    <None Include="Components\UserControls\UserControlDiagram.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <EmbeddedResource Include="Resources\Embedded\SQL.xshd" />
+    <EmbeddedResource Include="Resources\Embedded\CSharpTemplate.xshd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\folders\close_folder.png" />
+    <Resource Include="Resources\Images\16x16\application\delete.png" />
+    <Resource Include="Resources\Images\16x16\new_project.png" />
+    <Resource Include="Resources\Images\16x16\folders\open_folder.png" />
+    <Resource Include="Resources\Images\16x16\application\save.png" />
+    <Resource Include="Resources\Images\32x32\assembly.png" />
+    <Resource Include="Resources\Images\32x32\build.png" />
+    <Resource Include="Resources\Images\32x32\button_cancel.png" />
+    <Resource Include="Resources\Images\32x32\button_ok.png" />
+    <Resource Include="Resources\Images\32x32\folders\close_folder.png" />
+    <Resource Include="Resources\Images\32x32\application\delete.png" />
+    <Resource Include="Resources\Images\32x32\exit.png" />
+    <Resource Include="Resources\Images\32x32\application\help.png" />
+    <Resource Include="Resources\Images\32x32\keys.png" />
+    <Resource Include="Resources\Images\32x32\new_project.png" />
+    <Resource Include="Resources\Images\32x32\reflection_studio.png" />
+    <Resource Include="Resources\Images\32x32\folders\open_folder.png" />
+    <Resource Include="Resources\Images\32x32\run.png" />
+    <Resource Include="Resources\Images\32x32\application\save.png" />
+    <Resource Include="Resources\Images\32x32\tools.png" />
+    <Resource Include="Resources\ReflectionStudio.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReflectionStudio.Controls\ReflectionStudio.Controls.csproj">
+      <Project>{4C6E6717-5DA0-4601-B071-A0CE653CB321}</Project>
+      <Name>ReflectionStudio.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReflectionStudio.Core.Database.SQL2KProvider\ReflectionStudio.Core.Database.SQL2KProvider.csproj">
+      <Project>{E693C7E1-A6EA-41B2-BFBE-34FE8C06F065}</Project>
+      <Name>ReflectionStudio.Core.Database.SQL2KProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReflectionStudio.Core\ReflectionStudio.Core.csproj">
+      <Project>{9F226445-5D57-4CA7-B60E-6C49FD62364C}</Project>
+      <Name>ReflectionStudio.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\snapshot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\memory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\start_capture.png" />
+    <Resource Include="Resources\Images\32x32\stop_capture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\connect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\stop_build.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\application\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\new_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\assembly\assembly.png" />
+    <Resource Include="Resources\Images\16x16\assembly\class.png" />
+    <Resource Include="Resources\Images\16x16\assembly\class_pp.png" />
+    <Resource Include="Resources\Images\16x16\assembly\constructor.png" />
+    <Resource Include="Resources\Images\16x16\assembly\constructor_private.png" />
+    <Resource Include="Resources\Images\16x16\assembly\contructor_protected.png" />
+    <Resource Include="Resources\Images\16x16\assembly\delegate.png" />
+    <Resource Include="Resources\Images\16x16\assembly\delegate_pp.png" />
+    <Resource Include="Resources\Images\16x16\assembly\emun.png" />
+    <Resource Include="Resources\Images\16x16\assembly\emun_pp.png" />
+    <Resource Include="Resources\Images\16x16\assembly\enum_member.png" />
+    <Resource Include="Resources\Images\16x16\assembly\event.png" />
+    <Resource Include="Resources\Images\16x16\assembly\interfaces.png" />
+    <Resource Include="Resources\Images\16x16\assembly\member.png" />
+    <Resource Include="Resources\Images\16x16\assembly\member_private.png" />
+    <Resource Include="Resources\Images\16x16\assembly\member_protected.png" />
+    <Resource Include="Resources\Images\16x16\assembly\method.png" />
+    <Resource Include="Resources\Images\16x16\assembly\method_private.png" />
+    <Resource Include="Resources\Images\16x16\assembly\method_protected.png" />
+    <Resource Include="Resources\Images\16x16\assembly\namespace.png" />
+    <Resource Include="Resources\Images\16x16\assembly\properties.png" />
+    <Resource Include="Resources\Images\16x16\assembly\properties_internal.png" />
+    <Resource Include="Resources\Images\16x16\assembly\properties_private.png" />
+    <Resource Include="Resources\Images\16x16\assembly\properties_protected.png" />
+    <Resource Include="Resources\Images\16x16\assembly\references.png" />
+    <Resource Include="Resources\Images\16x16\assembly\structure.png" />
+    <Resource Include="Resources\Images\16x16\assembly\structure_pp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\application\redo.png" />
+    <Resource Include="Resources\Images\16x16\application\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\database\db.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\database\db_server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\folders\folder_closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\folders\folder_opened.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\database\table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\database\command.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\database\new_db.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\database\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\database\column.png" />
+    <Resource Include="Resources\Images\16x16\database\command_param.png" />
+    <Resource Include="Resources\Images\16x16\database\foreign_key.png" />
+    <Resource Include="Resources\Images\16x16\database\index.png" />
+    <Resource Include="Resources\Images\16x16\database\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\diagram\align_bottom.png" />
+    <Resource Include="Resources\Images\16x16\diagram\align_center_horizontal.png" />
+    <Resource Include="Resources\Images\16x16\diagram\align_center_vertical.png" />
+    <Resource Include="Resources\Images\16x16\diagram\align_left.png" />
+    <Resource Include="Resources\Images\16x16\diagram\align_right.png" />
+    <Resource Include="Resources\Images\16x16\diagram\align_top.png" />
+    <Resource Include="Resources\Images\16x16\diagram\bring_forward.png" />
+    <Resource Include="Resources\Images\16x16\diagram\bring_front.png" />
+    <Resource Include="Resources\Images\16x16\diagram\distribute_horizontal.png" />
+    <Resource Include="Resources\Images\16x16\diagram\distribute_vertical.png" />
+    <Resource Include="Resources\Images\16x16\diagram\group.png" />
+    <Resource Include="Resources\Images\16x16\diagram\send_back.png" />
+    <Resource Include="Resources\Images\16x16\diagram\send_backward.png" />
+    <Resource Include="Resources\Images\16x16\diagram\ungroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\application\copy.png" />
+    <Resource Include="Resources\Images\16x16\application\cut.png" />
+    <Resource Include="Resources\Images\16x16\application\paste.png" />
+    <Resource Include="Resources\Images\16x16\application\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\application\save_all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\plugin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\application\decrease_ident.png" />
+    <Resource Include="Resources\Images\16x16\application\increase_ident.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\application\zoom_in.png" />
+    <Resource Include="Resources\Images\16x16\application\zoom_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\properties.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\logs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\template.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\folders\new_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\ReflectionStudio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\128x128\reflection_studio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Embedded\ThemeManagerConfig.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\skin.png" />
+    <Resource Include="Resources\Images\32x32\skin_studio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\application\save_as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\application\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\database\new_db.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\application\copy.png" />
+    <Resource Include="Resources\Images\32x32\application\cut.png" />
+    <Resource Include="Resources\Images\32x32\application\paste.png" />
+    <Resource Include="Resources\Images\32x32\application\print.png" />
+    <Resource Include="Resources\Images\32x32\application\redo.png" />
+    <Resource Include="Resources\Images\32x32\application\save_as.png" />
+    <Resource Include="Resources\Images\32x32\application\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\database\db.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\skin_blend.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\database\query_check.png" />
+    <Resource Include="Resources\Images\32x32\database\query_run.png" />
+    <Resource Include="Resources\Images\32x32\database\query_stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\database\query_output.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\database\query_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\editor\Bold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\editor\ChangeCase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\editor\ClearFormatting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\editor\FontColor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\editor\FormatPainter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\editor\GrowFont.png" />
+    <Resource Include="Resources\Images\16x16\editor\Italic.png" />
+    <Resource Include="Resources\Images\16x16\editor\ShrinkFont.png" />
+    <Resource Include="Resources\Images\16x16\editor\Strikethrough.png" />
+    <Resource Include="Resources\Images\16x16\editor\Subscript.png" />
+    <Resource Include="Resources\Images\16x16\editor\Superscript.png" />
+    <Resource Include="Resources\Images\16x16\editor\TextHighlightColor.png" />
+    <Resource Include="Resources\Images\16x16\editor\Underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\diagram\align.png" />
+    <Resource Include="Resources\Images\32x32\diagram\bring_forward.png" />
+    <Resource Include="Resources\Images\32x32\diagram\send_backward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\editor\uncomment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\editor\increase_ident.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\editor\comment.png" />
+    <Resource Include="Resources\Images\16x16\editor\decrease_ident.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\application\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\application\new.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy  $(SolutionDir)\Documents\Documentation\*.xps $(TargetDir)\Help\ /E /Y
+xcopy  $(SolutionDir)\Documents\Templates\*.* $(TargetDir)\Templates\ /E /Y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

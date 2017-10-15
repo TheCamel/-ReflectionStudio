@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ReflectionStudio.Classes.DocumentFactory">
+    <Position X="0.5" Y="0.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AoAAAAAAAAIAAQAAAAAAABAIEQBAAAAEQAgAAAMGAAA=</HashCode>
+      <FileName>Classes\Services\DocumentFactory.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ActiveDocument" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="SupportedDocuments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ReflectionStudio.Classes.SupportedDocumentInfo">
+    <Position X="0.5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>QAQIAABAAAgDAAAAAAACAAACAQAAARAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Services\SupportedDocumentInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Classes.XpsFileService" Collapsed="true">
+    <Position X="12.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Services\FileService\XpsFileService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ReflectionStudio.Classes.TextFileService" Collapsed="true">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Services\FileService\TextFileService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ReflectionStudio.Classes.XpsGeneratedReportDocumentDataContext" Collapsed="true">
+    <Position X="10.75" Y="8.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Services\DataContext\XpsGeneratedDocumentDataContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Classes.DocumentDataContext">
+    <Position X="11.25" Y="4.25" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ECAAgIIAAAAAAIgAAAAAAAQSAAAAAQAAABAABAAAAAA=</HashCode>
+      <FileName>Classes\Services\DataContext\DocumentDataContext.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FileService" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ReflectionStudio.Classes.HelpDocumentDataContext" Collapsed="true">
+    <Position X="6.75" Y="8.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Services\DataContext\HelpDocumentDataContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Classes.HomeDocumentDataContext" Collapsed="true">
+    <Position X="3.25" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Services\DataContext\HomeDocumentDataContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Classes.QueryDocumentDataContext" Collapsed="true">
+    <Position X="11.75" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Services\DataContext\QueryDocumentDataContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Classes.TemplateDocumentDataContext" Collapsed="true">
+    <Position X="6" Y="7.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Services\DataContext\TemplateDocumentDataContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Classes.XpsDocumentDataContext" Collapsed="true">
+    <Position X="9" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Services\DataContext\XpsDocumentDataContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.QueryDocument" Collapsed="true">
+    <Position X="2.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhIAKCAACABQUAAAkAAAoEAEIAAKAICBIAIAwACRCgA=</HashCode>
+      <FileName>Components\UserControls\Documents\Database\QueryDocument.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.XpsReportDocument">
+    <Position X="6.5" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAACAAAAAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UserControls\Documents\Report\XpsReportDocument.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.TemplateDocument" Collapsed="true">
+    <Position X="4.5" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAIAACAAAAAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UserControls\Documents\Template\TemplateDocument.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.DocumentBase">
+    <Position X="3.75" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAgAQEIAIAAAAgAACAAAAAAAQCAAAAAAAAAA=</HashCode>
+      <FileName>Components\UserControls\Documents\DocumentBase.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Context" />
+      <Property Name="Worker" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.ZoomDocument" Collapsed="true">
+    <Position X="3.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAAAAAAAAAAYAgAAIAgACAAAAAAAAIAEAAAgAAAAA=</HashCode>
+      <FileName>Components\UserControls\Documents\ZoomDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.ComponentModel.BackgroundWorker" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="ReflectionStudio.Classes.IDocumentDataContext">
+    <Position X="8.5" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAgIAAAAAAAIAAAAAAAAQSAAAAAQAAABAABAAAAAA=</HashCode>
+      <FileName>Classes\Services\DataContext\IDocumentDataContext.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ReflectionStudio.Classes.IFileService">
+    <Position X="12.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Services\FileService\IFileService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

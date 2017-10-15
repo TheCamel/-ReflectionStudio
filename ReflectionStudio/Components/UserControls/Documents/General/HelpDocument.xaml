@@ -1,0 +1,26 @@
+﻿<local:DocumentBase x:Class="ReflectionStudio.Components.UserControls.HelpDocument"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"     
+    xmlns:local="clr-namespace:ReflectionStudio.Components.UserControls"
+	xmlns:ucc="clr-namespace:ReflectionStudio.Controls;assembly=ReflectionStudio.Controls"
+    Title="{Binding Name}" ToolTip="{Binding FullName}"
+    mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignHeight="160" d:DesignWidth="211">
+    
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ucc:StandaloneHeader Grid.Row="0" Title="Help" Image="/ReflectionStudio;component/Resources/Images/32x32/application/help.png" 
+            Description="Found here the help document about Reflection Studio" />
+            
+        <DocumentViewer Grid.Row="1" Name="documentViewer1"/>
+
+        <ucc:WaitSpin Grid.Row="1" Name="WaitPanel" AutoPlay="True" Elem="{Binding ElementName=documentViewer1}" />
+        
+    </Grid>
+    
+</local:DocumentBase>

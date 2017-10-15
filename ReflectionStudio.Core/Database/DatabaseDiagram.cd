@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ReflectionStudio.Core.Database.Schema.ColumnBaseSchema" Collapsed="true">
+    <Position X="2.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAABAABAQgAAAQAAAAAIAAIAAAAAAAAAQAAA=</HashCode>
+      <FileName>Database\Schema\ColumnBaseSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.ViewSchema" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAABAAIAEgAAAAAAAAAAAAIABAAAEGAgAAAA=</HashCode>
+      <FileName>Database\Schema\ViewSchema.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.CommandResultSchema" Collapsed="true">
+    <Position X="7.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAACAAABBAAAAAAAAABAAAAAAgAAAA=</HashCode>
+      <FileName>Database\Schema\CommandResultSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.CommandSchema" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFAAQACBDIFAoIQMgJAEIAAAAAoAAIAAAIAEEAAAAAA=</HashCode>
+      <FileName>Database\Schema\CommandSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.DatabaseSchema" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAggAAABEAAAEiCAAUBSAAAAkAIAAACAAAABAAAA=</HashCode>
+      <FileName>Database\Schema\DatabaseSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.DataObjectBase" Collapsed="true">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAgAAgCAIAAAMAAAAAAAAEgAAAAACkEAA=</HashCode>
+      <FileName>Database\Schema\DataObjectBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.ExtendedProperty" Collapsed="true">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAABAAAAAAIAQAAAAAAAAAgAAgAAAAAAA=</HashCode>
+      <FileName>Database\Schema\ExtendedProperty.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.IndexSchema" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAACAAAABAAAAAgAAIQAAIABAAQoAAAAAAAAAABAA=</HashCode>
+      <FileName>Database\Schema\IndexSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.ParameterSchema" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAgCAIBBAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database\Schema\ParameterSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.PrimaryKeySchema" Collapsed="true">
+    <Position X="4.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAgAAAQAAAAAAAQoAAAAAAAAAABAA=</HashCode>
+      <FileName>Database\Schema\PrimaryKeySchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.SchemaObjectBase" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAiAgEBgAAAAAAAAoAQAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database\Schema\SchemaObjectBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.SchemaUtility" Collapsed="true">
+    <Position X="12.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Database\Schema\SchemaUtility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.TableColumnSchema" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAgAAAQAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Database\Schema\TableColumnSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.TableKeySchema" Collapsed="true">
+    <Position X="5.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAABAAAgAgAEAAAAAACAAIIAABABAAAIAgAA=</HashCode>
+      <FileName>Database\Schema\TableKeySchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.TableSchema" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEACgAAAABQAIAEiAAAAQIQACAEAIABABAEGAgAgCA=</HashCode>
+      <FileName>Database\Schema\TableSchema.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.ViewColumnSchema" Collapsed="true">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database\Schema\ViewColumnSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ReflectionStudio.Core.Database.Schema.ITabularObjectBase" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAEBAAIAEgAAAAAQAAAAAAIAAAAAECAgAAAA=</HashCode>
+      <FileName>Database\Schema\ITabularObjectBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

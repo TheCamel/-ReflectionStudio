@@ -1,0 +1,31 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+
+        <!--Buttons-->
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/FrameButtons.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/Buttons.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/RoundGlassButton.xaml"/>
+
+        <!--Window and dialogs-->
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/DialogHeader.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/DialogWindow.xaml"/>
+
+        <!--Controls-->
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/PropertyGrid.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/StandaloneHeader.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/WaitSpin.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/TreeViewExtended.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/WatermarkedTextBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/WebLink.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/SyndicationFeedListBox.xaml"/>     
+        
+        <!--Designer-->
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/Designer/DesignerItem.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/Designer/Connection.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/Designer/ShapeStencils.xaml"/>
+
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ReflectionStudio.Controls.WindowBase" Collapsed="true">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAIBAAIIAAAAAQAgYAAAAAAAAAAAAAAQACAA=</HashCode>
+      <FileName>WindowBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.OfficeWindow" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAQAAABAhAAAAAEEBQAoAIEACAAAAAAABAAAQAAAA=</HashCode>
+      <FileName>OfficeWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.MessageBoxDlg" Collapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAEAAAAAAEAAAAAAAAAAAAAEAAAAAAAABAAAAgA=</HashCode>
+      <FileName>MessageBoxDlg.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.HeaderedDialogWindow" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAABAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>HeaderedDialogWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.DialogWindow" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAFAAAAAAAAAAEAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>DialogWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.Helpers.LongOperation" Collapsed="true">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\LongOperation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ReflectionStudio.Controls.Helpers.ThemeHelper" Collapsed="true">
+    <Position X="6.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAACAA=</HashCode>
+      <FileName>Helpers\ThemeHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.Helpers.ThemeManager" Collapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgIBAAAAAAAAAAAAAAAIAAIIAAAAAQBAAAAACIAA=</HashCode>
+      <FileName>Helpers\ThemeManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.Helpers.VisualHelper" Collapsed="true">
+    <Position X="6.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\VisualHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.BoolToVisibilityConverter" Collapsed="true">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\BoolToVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ReflectionStudio.Controls.EnumToStringConverter" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Converters\EnumToStringConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ReflectionStudio.Controls.VirtualToggleButton" Collapsed="true">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAIAAAAAAAgAAAAgIgCCAAkAAoAAAAAAAgQAkABAAA=</HashCode>
+      <FileName>Controls\VirtualToggleButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.TreeViewExtended" Collapsed="true">
+    <Position X="2.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAIBAAACAAAAAAAAAgAEAgAAAJAAAAAIQEAA=</HashCode>
+      <FileName>Controls\TreeViewExtended.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.StandaloneHeader" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAgAEAAEACAAAAAAACAABAAAAAAAAAAIAA=</HashCode>
+      <FileName>Controls\StandaloneHeader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.ImageButton" Collapsed="true">
+    <Position X="4.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEAAAAAAAAAAAAAAAAAAAAACAAAABAIAAAAAAAAIAA=</HashCode>
+      <FileName>Controls\ImageButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.FlatImageButton" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAIAA=</HashCode>
+      <FileName>Controls\ImageButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.DialogHeader" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAgAEAAEACAAAAAAACAABAAAAAAAAAAIAA=</HashCode>
+      <FileName>Controls\DialogHeader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Controls.AutoGreyableImage" Collapsed="true">
+    <Position X="2.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\AutoGreyableImage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,59 @@
+﻿<c:ZoomDocument x:Class="ReflectionStudio.Components.UserControls.QueryDocument"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit"
+             xmlns:c="clr-namespace:ReflectionStudio.Components.UserControls"
+             xmlns:ucd="clr-namespace:ReflectionStudio.Controls;assembly=ReflectionStudio.Controls"   
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300"
+             Title="{Binding Name}" ToolTip="{Binding FullName}" >
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="6" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="22" />
+        </Grid.RowDefinitions>
+        
+        <c:SyntaxedTextEditor x:Name="SyntaxEditor" LocalSyntax="SQL"  FontFamily="Consolas" FontSize="10pt" Grid.Row="0"/>
+
+        <ucd:WaitSpin Name="WaitPanel"
+                        AutoPlay="True"
+                        VerticalAlignment="Center" 
+                        HorizontalAlignment="Center"
+                        HorizontalContentAlignment="Center" Elem="{Binding ElementName=SyntaxEditor}" />
+        
+        <GridSplitter Grid.Row="1" Name="gridSplitter1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+        <TabControl Grid.Row="2" HorizontalAlignment="Stretch" Name="tabControlResult" VerticalAlignment="Stretch">
+            <TabItem Header="Grid" Name="tabItemGrid">
+                <my:DataGrid Name="dataGridResult" AutoGenerateColumns="true" EnableRowVirtualization="True"
+                    EnableColumnVirtualization="True" CanUserSortColumns="True">
+                </my:DataGrid>
+            </TabItem>
+            <TabItem Header="Text" Name="tabItemText">
+                <TextBox HorizontalAlignment="Stretch" Name="textBlockResult" VerticalAlignment="Stretch" AcceptsReturn="True" IsReadOnly="True" AllowDrop="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" IsUndoEnabled="False" IsTabStop="False" />
+            </TabItem>
+            <TabItem Header="Message" Name="tabItemMessage">
+                <TextBox HorizontalAlignment="Stretch" Name="textBlockMessage" VerticalAlignment="Stretch" AcceptsReturn="True" IsReadOnly="True" AllowDrop="False" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" IsUndoEnabled="False" IsTabStop="False" />
+            </TabItem>
+        </TabControl>
+        <DockPanel Grid.Row="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Name="textblockMessage" Grid.Column="0" TextTrimming="CharacterEllipsis"></TextBlock>
+                <Separator Grid.Column="0" HorizontalAlignment="Right" Height="18"></Separator>
+                <TextBlock Name="textblockSource" Grid.Column="1" TextTrimming="CharacterEllipsis" Text="{Binding SelectedDataSource.Name}" />
+                <Separator Grid.Column="1" HorizontalAlignment="Right" Height="18"></Separator>
+                <TextBlock Name="textblockTime" Grid.Column="2" TextTrimming="CharacterEllipsis"></TextBlock>
+                <Separator Grid.Column="2" HorizontalAlignment="Right" Height="18"></Separator>
+                <TextBlock Name="textblockLines" Grid.Column="3" TextTrimming="CharacterEllipsis"></TextBlock>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</c:ZoomDocument>

@@ -1,0 +1,19 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ucc="clr-namespace:ReflectionStudio.Controls">
+    <ResourceDictionary.MergedDictionaries>
+
+        <!--Default color-->
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Colors/Colors.Black.xaml" />
+        
+        <!--All custom templates-->
+        <ResourceDictionary Source="pack://application:,,,/ReflectionStudio.Controls;component/Resources/Controls/Common.xaml"/>
+    
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>
+
+    
+
+    

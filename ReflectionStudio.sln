@@ -1,0 +1,186 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{D8C9BC6D-C1EC-4A8B-8D0D-B2E71D3DC26B}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\AvalonDock.dll = Dependencies\AvalonDock.dll
+		Dependencies\AvalonDock.Themes.dll = Dependencies\AvalonDock.Themes.dll
+		Dependencies\CodeReason.Reports.Charts.Visifire.dll = Dependencies\CodeReason.Reports.Charts.Visifire.dll
+		Dependencies\CodeReason.Reports.dll = Dependencies\CodeReason.Reports.dll
+		Dependencies\Fluent.dll = Dependencies\Fluent.dll
+		Dependencies\ICSharpCode.AvalonEdit.dll = Dependencies\ICSharpCode.AvalonEdit.dll
+		Dependencies\Mono.Cecil.dll = Dependencies\Mono.Cecil.dll
+		Dependencies\WPFToolkit.dll = Dependencies\WPFToolkit.dll
+		Dependencies\WPFVisifire.Charts.dll = Dependencies\WPFVisifire.Charts.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionStudio", "ReflectionStudio\ReflectionStudio.csproj", "{8920DCC3-654F-4A15-9410-006BB076C6F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionStudio.Controls", "ReflectionStudio.Controls\ReflectionStudio.Controls.csproj", "{4C6E6717-5DA0-4601-B071-A0CE653CB321}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionStudio.Core", "ReflectionStudio.Core\ReflectionStudio.Core.csproj", "{9F226445-5D57-4CA7-B60E-6C49FD62364C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BF6B244F-8461-4803-AC22-F18EF6940E8C} = {BF6B244F-8461-4803-AC22-F18EF6940E8C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionStudio.Spy", "ReflectionStudio.Spy\ReflectionStudio.Spy.csproj", "{BF6B244F-8461-4803-AC22-F18EF6940E8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionStudio.Core.Database.SQL2KProvider", "ReflectionStudio.Core.Database.SQL2KProvider\ReflectionStudio.Core.Database.SQL2KProvider.csproj", "{E693C7E1-A6EA-41B2-BFBE-34FE8C06F065}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{BF8249DD-246D-457E-A233-29691FC7EFC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionStudio.Tools", "ReflectionStudio.Tools\ReflectionStudio.Tools.csproj", "{C0F7B75F-11E0-4CCF-88CE-630F9E5495B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{22F675CB-CEE8-4FFA-A699-C1C32B358651}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Documentation\ReflectionStudio.Help.docx = Documents\Documentation\ReflectionStudio.Help.docx
+		Documents\Documentation\ReflectionStudio.Help.xps = Documents\Documentation\ReflectionStudio.Help.xps
+		Documents\Documentation\ReflectionStudio.Technical.docx = Documents\Documentation\ReflectionStudio.Technical.docx
+		Documents\Documentation\ReflectionStudio.Technical.xps = Documents\Documentation\ReflectionStudio.Technical.xps
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Help", "Help", "{7AE1A3E6-B57F-4716-B8E2-7FFA932F3AAD}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Help\RSHelp.shfbproj = Documents\Help\RSHelp.shfbproj
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{B195B249-07EB-4D28-8574-5A42CE16339F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{206CFE3C-0AB0-460A-9653-33088720CA97}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\Templates\BO\BO_Base.rst = Documents\Templates\BO\BO_Base.rst
+		Documents\Templates\BO\BO_User.rst = Documents\Templates\BO\BO_User.rst
+		Documents\Templates\DAC\DAC_Base.rst = Documents\Templates\DAC\DAC_Base.rst
+		Documents\Templates\DAC\DAC_User.rst = Documents\Templates\DAC\DAC_User.rst
+		Documents\Templates\SQL\Database_StoredProcedures.rst = Documents\Templates\SQL\Database_StoredProcedures.rst
+		Documents\Templates\Service\Service_Base.rst = Documents\Templates\Service\Service_Base.rst
+		Documents\Templates\Service\Service_User.rst = Documents\Templates\Service\Service_User.rst
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8920DCC3-654F-4A15-9410-006BB076C6F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8920DCC3-654F-4A15-9410-006BB076C6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8920DCC3-654F-4A15-9410-006BB076C6F8}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8920DCC3-654F-4A15-9410-006BB076C6F8}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8920DCC3-654F-4A15-9410-006BB076C6F8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8920DCC3-654F-4A15-9410-006BB076C6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8920DCC3-654F-4A15-9410-006BB076C6F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8920DCC3-654F-4A15-9410-006BB076C6F8}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8920DCC3-654F-4A15-9410-006BB076C6F8}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8920DCC3-654F-4A15-9410-006BB076C6F8}.Release|x86.ActiveCfg = Release|Any CPU
+		{4C6E6717-5DA0-4601-B071-A0CE653CB321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6E6717-5DA0-4601-B071-A0CE653CB321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6E6717-5DA0-4601-B071-A0CE653CB321}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4C6E6717-5DA0-4601-B071-A0CE653CB321}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4C6E6717-5DA0-4601-B071-A0CE653CB321}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4C6E6717-5DA0-4601-B071-A0CE653CB321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6E6717-5DA0-4601-B071-A0CE653CB321}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C6E6717-5DA0-4601-B071-A0CE653CB321}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4C6E6717-5DA0-4601-B071-A0CE653CB321}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4C6E6717-5DA0-4601-B071-A0CE653CB321}.Release|x86.ActiveCfg = Release|Any CPU
+		{9F226445-5D57-4CA7-B60E-6C49FD62364C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F226445-5D57-4CA7-B60E-6C49FD62364C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F226445-5D57-4CA7-B60E-6C49FD62364C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9F226445-5D57-4CA7-B60E-6C49FD62364C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9F226445-5D57-4CA7-B60E-6C49FD62364C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9F226445-5D57-4CA7-B60E-6C49FD62364C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F226445-5D57-4CA7-B60E-6C49FD62364C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F226445-5D57-4CA7-B60E-6C49FD62364C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9F226445-5D57-4CA7-B60E-6C49FD62364C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9F226445-5D57-4CA7-B60E-6C49FD62364C}.Release|x86.ActiveCfg = Release|Any CPU
+		{BF6B244F-8461-4803-AC22-F18EF6940E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6B244F-8461-4803-AC22-F18EF6940E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6B244F-8461-4803-AC22-F18EF6940E8C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BF6B244F-8461-4803-AC22-F18EF6940E8C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BF6B244F-8461-4803-AC22-F18EF6940E8C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BF6B244F-8461-4803-AC22-F18EF6940E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6B244F-8461-4803-AC22-F18EF6940E8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF6B244F-8461-4803-AC22-F18EF6940E8C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BF6B244F-8461-4803-AC22-F18EF6940E8C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BF6B244F-8461-4803-AC22-F18EF6940E8C}.Release|x86.ActiveCfg = Release|Any CPU
+		{E693C7E1-A6EA-41B2-BFBE-34FE8C06F065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E693C7E1-A6EA-41B2-BFBE-34FE8C06F065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E693C7E1-A6EA-41B2-BFBE-34FE8C06F065}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E693C7E1-A6EA-41B2-BFBE-34FE8C06F065}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E693C7E1-A6EA-41B2-BFBE-34FE8C06F065}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E693C7E1-A6EA-41B2-BFBE-34FE8C06F065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E693C7E1-A6EA-41B2-BFBE-34FE8C06F065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E693C7E1-A6EA-41B2-BFBE-34FE8C06F065}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E693C7E1-A6EA-41B2-BFBE-34FE8C06F065}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E693C7E1-A6EA-41B2-BFBE-34FE8C06F065}.Release|x86.ActiveCfg = Release|Any CPU
+		{C0F7B75F-11E0-4CCF-88CE-630F9E5495B0}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C0F7B75F-11E0-4CCF-88CE-630F9E5495B0}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{C0F7B75F-11E0-4CCF-88CE-630F9E5495B0}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{C0F7B75F-11E0-4CCF-88CE-630F9E5495B0}.Debug|x86.ActiveCfg = Debug|x86
+		{C0F7B75F-11E0-4CCF-88CE-630F9E5495B0}.Debug|x86.Build.0 = Debug|x86
+		{C0F7B75F-11E0-4CCF-88CE-630F9E5495B0}.Release|Any CPU.ActiveCfg = Release|x86
+		{C0F7B75F-11E0-4CCF-88CE-630F9E5495B0}.Release|Any CPU.Build.0 = Release|x86
+		{C0F7B75F-11E0-4CCF-88CE-630F9E5495B0}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{C0F7B75F-11E0-4CCF-88CE-630F9E5495B0}.Release|Mixed Platforms.Build.0 = Release|x86
+		{C0F7B75F-11E0-4CCF-88CE-630F9E5495B0}.Release|x86.ActiveCfg = Release|x86
+		{C0F7B75F-11E0-4CCF-88CE-630F9E5495B0}.Release|x86.Build.0 = Release|x86
+		{B195B249-07EB-4D28-8574-5A42CE16339F}.Debug|Any CPU.ActiveCfg = Debug
+		{B195B249-07EB-4D28-8574-5A42CE16339F}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{B195B249-07EB-4D28-8574-5A42CE16339F}.Debug|Mixed Platforms.Build.0 = Debug
+		{B195B249-07EB-4D28-8574-5A42CE16339F}.Debug|x86.ActiveCfg = Debug
+		{B195B249-07EB-4D28-8574-5A42CE16339F}.Debug|x86.Build.0 = Debug
+		{B195B249-07EB-4D28-8574-5A42CE16339F}.Release|Any CPU.ActiveCfg = Release
+		{B195B249-07EB-4D28-8574-5A42CE16339F}.Release|Any CPU.Build.0 = Release
+		{B195B249-07EB-4D28-8574-5A42CE16339F}.Release|Mixed Platforms.ActiveCfg = Release
+		{B195B249-07EB-4D28-8574-5A42CE16339F}.Release|Mixed Platforms.Build.0 = Release
+		{B195B249-07EB-4D28-8574-5A42CE16339F}.Release|x86.ActiveCfg = Release
+		{B195B249-07EB-4D28-8574-5A42CE16339F}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22F675CB-CEE8-4FFA-A699-C1C32B358651} = {BF8249DD-246D-457E-A233-29691FC7EFC0}
+		{7AE1A3E6-B57F-4716-B8E2-7FFA932F3AAD} = {BF8249DD-246D-457E-A233-29691FC7EFC0}
+		{206CFE3C-0AB0-460A-9653-33088720CA97} = {BF8249DD-246D-457E-A233-29691FC7EFC0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC7AF54F-6A2F-435B-9583-DB00950BEA47}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs08
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ReflectionStudio\\ReflectionStudio.csproj
+		SccProjectName1 = ReflectionStudio
+		SccLocalPath1 = ReflectionStudio
+		SccProjectUniqueName2 = ReflectionStudio.Controls\\ReflectionStudio.Controls.csproj
+		SccProjectName2 = ReflectionStudio.Controls
+		SccLocalPath2 = ReflectionStudio.Controls
+		SccProjectUniqueName3 = ReflectionStudio.Core\\ReflectionStudio.Core.csproj
+		SccProjectName3 = ReflectionStudio.Core
+		SccLocalPath3 = ReflectionStudio.Core
+		SccProjectUniqueName4 = ReflectionStudio.Spy\\ReflectionStudio.Spy.csproj
+		SccProjectName4 = ReflectionStudio.Spy
+		SccLocalPath4 = ReflectionStudio.Spy
+		SccProjectUniqueName5 = ReflectionStudio.Core.Database.SQL2KProvider\\ReflectionStudio.Core.Database.SQL2KProvider.csproj
+		SccProjectName5 = ReflectionStudio.Core.Database.SQL2KProvider
+		SccLocalPath5 = ReflectionStudio.Core.Database.SQL2KProvider
+		SccProjectUniqueName6 = ReflectionStudio.Tools\\ReflectionStudio.Tools.csproj
+		SccProjectName6 = ReflectionStudio.Tools
+		SccLocalPath6 = ReflectionStudio.Tools
+		SccProjectUniqueName7 = Setup\\Setup.vdproj
+		SccProjectName7 = Setup
+		SccLocalPath7 = Setup
+		SccProjectUniqueName8 = Schemas\\Schemas.modelproj
+		SccProjectName8 = Schemas
+		SccLocalPath8 = Schemas
+	EndGlobalSection
+EndGlobal

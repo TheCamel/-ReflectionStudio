@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ReflectionStudio.Core.Database.DatabaseService" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAFAAAAAAAAQAAAAAACAAAAQAAEAAgAAAA=</HashCode>
+      <FileName>Database\DatabaseService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Instance" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Providers" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.DataSource" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAEAAAAAEAAAAIAQAAAAgAAAACCQAAAAAAAA=</HashCode>
+      <FileName>Database\DataSource.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Database" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.QueryManager" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAQACAAAAAAAACA=</HashCode>
+      <FileName>Database\QueryManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Queries" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Query" Collapsed="true">
+    <Position X="3" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database\QueryManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Core.Database.Schema.DatabaseSchema" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAggAAABEAAAEiCAAUBSAAAAkAIAAACAAAABAAAA=</HashCode>
+      <FileName>Database\Schema\DatabaseSchema.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="ReflectionStudio.Core.Database.IDbSQLWriter" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AARAAEABAAAQAAAAAAAAAAAAAAEAAEAAAAAAQAAAAAA=</HashCode>
+      <FileName>Database\IDbSQLWriter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ReflectionStudio.Core.Database.IDbSchemaProvider" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AEQAIBQIQAAggAAIEAEACAQAAIAAABEAgACAAiAAAAA=</HashCode>
+      <FileName>Database\IDbSchemaProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ReflectionStudio.Core.Database.IDbSQLQuery" Collapsed="true">
+    <Position X="5" Y="1.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database\IDbSQLQuery.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ReflectionStudio.Core.Database.IDbSQLVerifier" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Database\IDbSQLVerifier.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ReflectionStudio.Core.Database.IDbSourcePanel" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAACAABAAAAAA=</HashCode>
+      <FileName>Database\IDbSourcePanel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

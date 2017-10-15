@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4C6E6717-5DA0-4601-B071-A0CE653CB321}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReflectionStudio.Controls</RootNamespace>
+    <AssemblyName>ReflectionStudio.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\ReflectionStudio.Controls.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\ReflectionStudio.Controls.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\Controls\Common.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\RoundGlassButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\SyndicationFeedListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\TreeViewExtended.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Colors\Colors.Black.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Colors\Colors.Blue.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Colors\Colors.Silver.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\WatermarkedTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\WebLink.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Skins\Glossy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Skins\VisualStudio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Skins\Blend.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AssemblyInfoVersion.cs">
+      <Link>Properties\AssemblyInfoVersion.cs</Link>
+    </Compile>
+    <Compile Include="Controls\AutoGreyableImage.cs" />
+    <Compile Include="Controls\Diagram\Components\Connection.cs" />
+    <Compile Include="Controls\Diagram\Components\ConnectionAdorner.cs" />
+    <Compile Include="Controls\Diagram\Components\Connector.cs" />
+    <Compile Include="Controls\Diagram\Components\ConnectorAdorner.cs" />
+    <Compile Include="Controls\Diagram\Components\DesignerItem.cs" />
+    <Compile Include="Controls\Diagram\Components\DragThumb.cs" />
+    <Compile Include="Controls\Diagram\Components\RelativePositionPanel.cs" />
+    <Compile Include="Controls\Diagram\Components\ResizeThumb.cs" />
+    <Compile Include="Controls\Diagram\Components\RubberbandAdorner.cs" />
+    <Compile Include="Controls\Diagram\DesignerCanvas.Commands.cs" />
+    <Compile Include="Controls\Diagram\DesignerCanvas.cs" />
+    <Compile Include="Controls\Diagram\Helpers\IGroupable.cs" />
+    <Compile Include="Controls\Diagram\Helpers\ISelectable.cs" />
+    <Compile Include="Controls\Diagram\Helpers\PathFinder.cs" />
+    <Compile Include="Controls\Diagram\Helpers\SelectionService.cs" />
+    <Compile Include="Controls\SyndicationFeedListBox.cs" />
+    <Compile Include="Controls\Toolbox\Toolbox.cs" />
+    <Compile Include="Controls\Toolbox\ToolboxItem.cs" />
+    <Compile Include="Controls\TreeViewExtended.cs" />
+    <Compile Include="Controls\WatermarkedTextBox.cs" />
+    <Compile Include="Controls\WebLink.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\EnumToStringConverter.cs" />
+    <Compile Include="Converters\StripHtmlConverter.cs" />
+    <Compile Include="Converters\SyndicationItemToUriConverter.cs" />
+    <Compile Include="Converters\TextTrimmingConverter.cs" />
+    <Compile Include="DialogWindow.cs" />
+    <Compile Include="Controls\DialogHeader.cs" />
+    <Compile Include="Helpers\DragDropContainer.cs" />
+    <Compile Include="Helpers\LongOperation.cs" />
+    <Compile Include="Helpers\MaximizeHelper.cs" />
+    <Compile Include="Helpers\ThemeHelper.cs" />
+    <Compile Include="Controls\ImageButton.cs" />
+    <Compile Include="Controls\StandaloneHeader.cs" />
+    <Compile Include="HeaderedDialogWindow.cs" />
+    <Compile Include="Helpers\ThemeManager.cs" />
+    <Compile Include="Helpers\VisualHelper.cs" />
+    <Compile Include="OfficeWindow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Controls\Property\PropertyGrid.cs" />
+    <Compile Include="Controls\Property\EnumTypeConverter.cs" />
+    <Compile Include="Controls\Property\FlagAttribute.cs" />
+    <Compile Include="Controls\Property\PropertyItem.cs" />
+    <Compile Include="Controls\Property\PropertyBase.cs" />
+    <Compile Include="Controls\Property\PropertyBaseList.cs" />
+    <Compile Include="Controls\Property\PropertyCategory.cs" />
+    <Compile Include="Controls\Property\PropertyTemplateSelector.cs" />
+    <Compile Include="MessageBoxDlg.xaml.cs">
+      <DependentUpon>MessageBoxDlg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\VirtualToggleButton.cs" />
+    <Compile Include="Controls\WaitSpin.cs" />
+    <Compile Include="WindowBase.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ClassDiagramAll.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\Controls\Designer\Connection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\Designer\DesignerItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\Designer\ShapeStencils.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\Toolbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\Buttons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\StandaloneHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\DialogHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\DialogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\FrameButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MessageBoxDlg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\OfficeWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\PropertyGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Controls\WaitSpin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\128x128\messagebox-asterisk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\128x128\messagebox-warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\128x128\messagebox-error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\128x128\messagebox-hand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\128x128\messagebox-information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\128x128\messagebox-question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\designer\align_bottom.png" />
+    <Resource Include="Resources\Images\16x16\designer\align_center_horizontal.png" />
+    <Resource Include="Resources\Images\16x16\designer\align_center_vertical.png" />
+    <Resource Include="Resources\Images\16x16\designer\align_left.png" />
+    <Resource Include="Resources\Images\16x16\designer\align_right.png" />
+    <Resource Include="Resources\Images\16x16\designer\align_top.png" />
+    <Resource Include="Resources\Images\16x16\designer\bring_forward.png" />
+    <Resource Include="Resources\Images\16x16\designer\bring_front.png" />
+    <Resource Include="Resources\Images\16x16\designer\distribute_horizontal.png" />
+    <Resource Include="Resources\Images\16x16\designer\distribute_vertical.png" />
+    <Resource Include="Resources\Images\16x16\designer\group.png" />
+    <Resource Include="Resources\Images\16x16\designer\send_back.png" />
+    <Resource Include="Resources\Images\16x16\designer\send_backward.png" />
+    <Resource Include="Resources\Images\16x16\designer\ungroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\sort_alpha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\16x16\sort_category.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReflectionStudio.Core\ReflectionStudio.Core.csproj">
+      <Project>{9F226445-5D57-4CA7-B60E-6C49FD62364C}</Project>
+      <Name>ReflectionStudio.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Images\32x32\messagebox-error.png" />
+    <Resource Include="Resources\Images\32x32\messagebox-exclamation.png" />
+    <Resource Include="Resources\Images\32x32\messagebox-hand.png" />
+    <Resource Include="Resources\Images\32x32\messagebox-info.png" />
+    <Resource Include="Resources\Images\32x32\messagebox-information.png" />
+    <Resource Include="Resources\Images\32x32\messagebox-question.png" />
+    <Resource Include="Resources\Images\32x32\messagebox-stop.png" />
+    <Resource Include="Resources\Images\32x32\messagebox-warning.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

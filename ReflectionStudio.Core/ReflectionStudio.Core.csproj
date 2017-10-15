@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F226445-5D57-4CA7-B60E-6C49FD62364C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReflectionStudio.Core</RootNamespace>
+    <AssemblyName>ReflectionStudio.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\ReflectionStudio.Core.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\ReflectionStudio.Core.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Cecil, Version=0.6.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\AssemblyInfoVersion.cs">
+      <Link>Properties\AssemblyInfoVersion.cs</Link>
+    </Compile>
+    <Compile Include="Binding\BindableObject.cs" />
+    <Compile Include="Binding\BindableObjectExtended.cs" />
+    <Compile Include="Business\BusinessEntity.cs" />
+    <Compile Include="Database\DatabaseService.cs" />
+    <Compile Include="Database\DataSource.cs" />
+    <Compile Include="Database\IDbSchemaProvider.cs" />
+    <Compile Include="Database\IDbSourcePanel.cs" />
+    <Compile Include="Database\IDbQuery.cs" />
+    <Compile Include="Database\IDbVerifier.cs" />
+    <Compile Include="Database\IDbScriptWriter.cs" />
+    <Compile Include="Database\EmbeddedQueryManager.cs" />
+    <Compile Include="Database\Schema\ColumnBaseSchema.cs" />
+    <Compile Include="Database\Schema\CommandResultColumnSchema.cs" />
+    <Compile Include="Database\Schema\CommandResultSchema.cs" />
+    <Compile Include="Database\Schema\CommandSchema.cs" />
+    <Compile Include="Database\Schema\DatabaseSchema.cs" />
+    <Compile Include="Database\Schema\DataObjectBase.cs" />
+    <Compile Include="Database\Schema\ExtendedProperty.cs" />
+    <Compile Include="Database\Schema\IndexSchema.cs" />
+    <Compile Include="Database\Schema\ITabularObjectBase.cs" />
+    <Compile Include="Database\Schema\ParameterSchema.cs" />
+    <Compile Include="Database\Schema\PrimaryKeySchema.cs" />
+    <Compile Include="Database\Schema\SchemaObjectBase.cs" />
+    <Compile Include="Database\Schema\SchemaUtility.cs" />
+    <Compile Include="Database\Schema\TableColumnSchema.cs" />
+    <Compile Include="Database\Schema\TableKeySchema.cs" />
+    <Compile Include="Database\Schema\TableSchema.cs" />
+    <Compile Include="Database\Schema\ViewColumnSchema.cs" />
+    <Compile Include="Database\Schema\ViewSchema.cs" />
+    <Compile Include="Events\EventDispatcher.cs" />
+    <Compile Include="Events\MessageEventArgs.cs" />
+    <Compile Include="Events\MessageInfo.cs" />
+    <Compile Include="Events\ProjectEventArgs.cs" />
+    <Compile Include="Events\StatusEventArgs.cs" />
+    <Compile Include="FileManagement\BinaryHelper.cs" />
+    <Compile Include="FileManagement\DiskContent.cs" />
+    <Compile Include="Generator\ClassWriter\ClassWriter.cs" />
+    <Compile Include="Generator\ClassWriter\ClassWriterCompiler.cs" />
+    <Compile Include="Generator\GeneratorService.cs" />
+    <Compile Include="Generator\Compilers\CompilerFactory.cs" />
+    <Compile Include="Generator\Compilers\CSharpCodeCompiler.cs" />
+    <Compile Include="Generator\Compilers\IMyCompiler.cs" />
+    <Compile Include="Generator\Context.cs" />
+    <Compile Include="Generator\Parsers\InFileParser.cs" />
+    <Compile Include="Generator\Parsers\InMemoryParser.cs" />
+    <Compile Include="Generator\Parsers\ITemplateParser.cs" />
+    <Compile Include="Generator\Parsers\ParserFactory.cs" />
+    <Compile Include="Generator\Parsers\TemplateParser.cs" />
+    <Compile Include="Generator\TemplateItem.cs" />
+    <Compile Include="Helpers\AsyncUrlSaveHelper.cs" />
+    <Compile Include="Helpers\ByteHelper.cs" />
+    <Compile Include="Helpers\CecilHelper.cs" />
+    <Compile Include="FileManagement\SerializeHelper.cs" />
+    <Compile Include="Events\Tracer.cs" />
+    <Compile Include="Helpers\PathHelper.cs" />
+    <Compile Include="Helpers\ProcessHelper.cs" />
+    <Compile Include="Helpers\ResourceHelper.cs" />
+    <Compile Include="Helpers\UrlSaveHelper.cs" />
+    <Compile Include="Helpers\WorkerBase.cs" />
+    <Compile Include="FileManagement\XmlHelper.cs" />
+    <Compile Include="Project\Map\MethodMapBuilder.cs" />
+    <Compile Include="Project\Map\MethodMapInfo.cs" />
+    <Compile Include="Project\Profiling\BodyWorker.cs" />
+    <Compile Include="Project\Profiling\InjectionProfiler.cs" />
+    <Compile Include="Project\Profiling\ProfilingContext.cs" />
+    <Compile Include="Project\ProjectBuilder.cs" />
+    <Compile Include="Project\ProjectConstants.cs" />
+    <Compile Include="Project\ProjectDAC.cs" />
+    <Compile Include="Project\ProjectEntity.cs" />
+    <Compile Include="Project\ProjectService.cs" />
+    <Compile Include="Project\ProjectWorker.cs" />
+    <Compile Include="Project\Setting\Settings.cs" />
+    <Compile Include="Project\Setting\SpySettings.cs" />
+    <Compile Include="Project\Snapshot\Distant\DistantDAC.cs" />
+    <Compile Include="Project\Snapshot\Distant\DistantSnapshotService.cs" />
+    <Compile Include="Project\Snapshot\Reading\CallStackInfo.cs" />
+    <Compile Include="Project\Snapshot\Reading\SnapshotInfo.cs" />
+    <Compile Include="Project\Snapshot\SnapshotDAC.cs" />
+    <Compile Include="Project\Snapshot\SnapshotEntity.cs" />
+    <Compile Include="Project\Snapshot\SnapshotService.cs" />
+    <Compile Include="Project\Snapshot\SnapshotWatcher.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reflection\AssemblyBackgroundWorkerParser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reflection\Parser\Cecil\CecilAssemblyParser.cs" />
+    <Compile Include="Reflection\AssemblyParserFactory.cs" />
+    <Compile Include="Reflection\Helper\AssemblyTester.cs" />
+    <Compile Include="Reflection\IAssemblyParser.cs" />
+    <Compile Include="Reflection\Parser\Net\NetAssemblyParser.cs" />
+    <Compile Include="Reflection\Types\NetAssembly.cs" />
+    <Compile Include="Reflection\Types\NetBaseType.cs" />
+    <Compile Include="Reflection\Types\NetClass.cs" />
+    <Compile Include="Reflection\Types\NetEnum.cs" />
+    <Compile Include="Reflection\Types\NetInterface.cs" />
+    <Compile Include="Reflection\Types\NetMethod.cs" />
+    <Compile Include="Reflection\Types\NetNamespace.cs" />
+    <Compile Include="Reflection\Types\NetParameter.cs" />
+    <Compile Include="Reflection\Types\NetReference.cs" />
+    <Compile Include="Service References\CaptureService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Database\DatabaseDiagram.cd" />
+    <None Include="Database\PluginProviderDiagram.cd" />
+    <None Include="Events\TraceEventModel.cd" />
+    <None Include="Reflection\ReflectModel.cd" />
+    <None Include="Service References\CaptureService\Arrays.xsd" />
+    <None Include="Service References\CaptureService\service.wsdl" />
+    <None Include="Service References\CaptureService\service.xsd" />
+    <None Include="Service References\CaptureService\service1.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CaptureService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CaptureService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CaptureService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CaptureService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Generator\ClassWriter\ClassWriterExtended.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

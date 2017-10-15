@@ -1,0 +1,45 @@
+﻿<ucc:HeaderedDialogWindow x:Class="ReflectionStudio.Components.Dialogs.Project.SnapshotListDlg"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ucc="clr-namespace:ReflectionStudio.Controls;assembly=ReflectionStudio.Controls"                          
+    xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit"
+    Title="Snapshot List"
+    Height="400" Width="440"
+    DialogDescription="Distant snapshot file list available for download"
+    DialogImage="/ReflectionStudio;component/Resources/Images/32x32/new_project.png">
+    <Grid Margin="8">
+        <my:DataGrid Grid.Row="1" Name="dataGridSnap" ItemsSource="{Binding .}"
+                AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True"
+                RowHeaderWidth="20" MinRowHeight="30" EnableRowVirtualization="True"
+                EnableColumnVirtualization="True"
+                CanUserSortColumns="True"
+                 >
+            <!-- Column definition -->
+            <my:DataGrid.Columns>
+                <my:DataGridTextColumn Header="File" Binding="{Binding .}" />
+                <my:DataGridTemplateColumn Header="Delete">
+                    <my:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Height="25" Width="25" Margin="1" Click="BtnDelete_Click">
+                                <Button.Content>
+                                    <Image Source="/ReflectionStudio;component/Resources/Images/32x32/delete.png"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </my:DataGridTemplateColumn.CellTemplate>
+                </my:DataGridTemplateColumn>
+                <my:DataGridTemplateColumn Header="Download">
+                    <my:DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Height="25" Width="25" Margin="1" Click="BtnDownload_Click">
+                                <Button.Content>
+                                    <Image Source="/ReflectionStudio;component/Resources/Images/32x32/download.png"/>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </my:DataGridTemplateColumn.CellTemplate>
+                </my:DataGridTemplateColumn>
+            </my:DataGrid.Columns>
+        </my:DataGrid>
+    </Grid>
+</ucc:HeaderedDialogWindow>

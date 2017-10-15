@@ -1,0 +1,84 @@
+<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             FontSize="14" FontFamily="Georgia">
+	<Paragraph>
+		<Image Source="/ReflectionStudio;component/Resources/Images/128x128/reflection_studio.png" Width="40"></Image>
+		<Bold>Reflection Studio</Bold>
+	</Paragraph>
+	<Paragraph>
+		<Run FontSize="13" FontWeight="Bold">
+			Welcome to Reflection Studio. It is a development tool that encapsulate all my work around reflection, performance and software quality.
+		</Run>
+		<LineBreak/>
+		<LineBreak/>
+		<Run FontSize="11">In a short way, here under is what i planned to include in it :</Run>
+	</Paragraph>
+	<List>
+		<ListItem>
+			<Paragraph>
+				<Run FontSize="12" FontWeight="Bold">
+					Performance
+				</Run>
+				<LineBreak/>
+				<Run FontSize="11">With Reflection Studio, you can create a performance project. It enable to inject and analyse performance traces into any NET assemblies
+					to optimize the code based on it's execution.
+				</Run>
+				<LineBreak/>
+			</Paragraph>
+		</ListItem>
+		<ListItem>
+			<Paragraph>
+				<Run FontSize="12" FontWeight="Bold">
+					Assembly
+				</Run>
+				<LineBreak/>
+				<Run FontSize="11">
+					Reflection Studio contains an assembly explorer like Reflector. It allow you to discover assembly content and is associated with a class diagram
+					document to generated architecture oriented schema. 
+				</Run>
+				<LineBreak/>
+			</Paragraph>
+		</ListItem>
+		<ListItem>
+			<Paragraph>
+				<Run FontSize="12" FontWeight="Bold">
+					Database
+				</Run>
+				<LineBreak/>
+				<Run FontSize="11">
+					Reflection Studio contains a database explorer like SQL Server management studio (based on a schema and plugin system).
+					The actual SQL Server 2K plugin allow to discover the schema, generate, modify and execute scripts, view dependencies, control the quality by generating a report.
+				</Run>
+				<LineBreak/>
+			</Paragraph>
+		</ListItem>
+		<ListItem>
+			<Paragraph>
+				<Run FontSize="12" FontWeight="Bold">
+					Code generation
+				</Run>
+				<LineBreak/>
+				<Run FontSize="11">
+					Reflection Studio also contains a template explorer associated with a code generator engine which allow to automatically create
+					code based on the associated database. One editor allow you to create the template code, compile and test the code generated.
+				</Run>
+				<LineBreak/>
+			</Paragraph>
+		</ListItem>
+	</List>
+	<Paragraph FontSize="11">
+		<Run FontSize="11">
+			Start a new performance project :
+		</Run>
+        <Hyperlink Name="HyperlinkNewProject">New project</Hyperlink>
+	</Paragraph>    
+	<Paragraph>
+		<Italic FontSize="12">Find below some usefull links :</Italic><LineBreak/>
+		<Italic FontSize="12">
+            <Hyperlink Name="HyperlinkNaviguate1" NavigateUri="http://reflectionstudio.codeplex.com">
+				http://reflectionstudio.codeplex.com
+			</Hyperlink><LineBreak/>
+			<Hyperlink Name="HyperlinkNaviguate2" NavigateUri="http://www.codeproject.com/reflectionstudio.aspx">
+			http://www.codeproject.com/reflectionstudio.aspx</Hyperlink><LineBreak/>
+		</Italic>
+	</Paragraph>
+</FlowDocument>

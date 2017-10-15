@@ -1,0 +1,110 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+    <!--OFFICE STYLE WINDOW-->
+
+    <Style TargetType="{x:Type Button}" x:Key="WindowChromeButton">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Background="Transparent" SnapsToDevicePixels="True">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="minimizeButton" TargetType="{x:Type Button}" BasedOn="{StaticResource WindowChromeButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle Stretch="Fill" Fill="Transparent"></Rectangle>
+                        <Rectangle Name="content" HorizontalAlignment="Center" Stroke="{DynamicResource NormalForegroundBrush}" Width="10" Height="2"
+                                   VerticalAlignment="Bottom" Fill="{DynamicResource NormalForegroundBrush}" StrokeThickness="0" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter TargetName="content" Property="Fill" Value="{DynamicResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter Property="RenderTransform" TargetName="content">
+                                <Setter.Value>
+                                    <TranslateTransform X="1" Y="1"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="maximizeButton" TargetType="{x:Type Button}" BasedOn="{StaticResource WindowChromeButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle Stretch="Fill" Fill="Transparent"></Rectangle>
+                        <Rectangle HorizontalAlignment="Center" Name="content" Stroke="{DynamicResource NormalForegroundBrush}" Width="9" Height="9"
+                                   VerticalAlignment="Bottom" StrokeThickness="2" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter TargetName="content" Property="Stroke" Value="{DynamicResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter Property="RenderTransform" TargetName="content">
+                                <Setter.Value>
+                                    <TranslateTransform X="1" Y="1"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="closeButton" TargetType="{x:Type Button}" BasedOn="{StaticResource WindowChromeButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Rectangle Stretch="Fill" Fill="Transparent"></Rectangle>
+                        <Line Name="line1" X1="0" Y1="0" X2="8" Y2="8" Stroke="{DynamicResource NormalForegroundBrush}" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"></Line>
+                        <Line Name="line2" X1="8" Y1="0" X2="0" Y2="8" Stroke="{DynamicResource NormalForegroundBrush}" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Bottom"></Line>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Button.IsMouseOver" Value="True">
+                            <Setter TargetName="line1" Property="Stroke" Value="{DynamicResource HoverBackgroundBrush}"/>
+                            <Setter TargetName="line2" Property="Stroke" Value="{DynamicResource HoverBackgroundBrush}"/>
+                        </Trigger>
+                        <Trigger Property="Button.IsPressed" Value="True">
+                            <Setter Property="RenderTransform" TargetName="line1">
+                                <Setter.Value>
+                                    <TranslateTransform X="1" Y="1"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="RenderTransform" TargetName="line2">
+                                <Setter.Value>
+                                    <TranslateTransform X="1" Y="1"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>
+
+    
+
+    

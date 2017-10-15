@@ -1,0 +1,85 @@
+﻿<UserControl
+    x:Class="ReflectionStudio.Components.UserControls.BuildOption"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ucc="clr-namespace:ReflectionStudio.Controls;assembly=ReflectionStudio.Controls"
+    HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+        	<RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ucc:StandaloneHeader Title="Build options"
+                Image="/ReflectionStudio;component/Resources/Images/32x32/tools.png" 
+                Description="Define here all the profiling options for the build"
+                HasSeparator="Visible"/>
+        
+        <Grid Grid.Row="1" Margin="5" DataContext="{Binding Project.Settings}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <GroupBox Header="Trace mode">
+                        <StackPanel Margin="5">
+                            <RadioButton GroupName="Profiling" Name="rbMethodCall">Method's call</RadioButton>
+                            <RadioButton GroupName="Profiling" Name="rbMethodTime">Method's time</RadioButton>
+                            <CheckBox IsChecked="{Binding SkipSmallMethods}" ToolTip="Overrides the target selection">Automatic skip of small methods</CheckBox>
+                    </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Log mode">
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="8*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Text="No log" TextWrapping="Wrap"/>
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Text="Only errors" TextWrapping="Wrap"/>
+                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Text="Log everything" TextWrapping="Wrap"/>
+                        <Slider Orientation="Vertical" TickPlacement="Both" Margin="0,2,0,2"
+                                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                Maximum="2" SmallChange="1" Grid.RowSpan="3" IsSnapToTickEnabled="True"
+                                Value="{Binding LogLevel}" Name="sliderLogLevel" IsDirectionReversed="True" />
+                    </Grid>
+                </GroupBox>
+                </StackPanel>
+                <GroupBox Header="Distant control" Grid.Column="1">
+                    <StackPanel Margin="5">
+                        <CheckBox IsChecked="{Binding AllowDistantControl}" Name="AllowDistantCheck">Allow</CheckBox>
+                        <StackPanel IsEnabled="{Binding ElementName=AllowDistantCheck , Path=IsChecked}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0">Transport:</TextBlock>
+                                <ComboBox Width="60" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Name="cbTransportMode">
+                                    <ComboBoxItem>HTTP</ComboBoxItem>
+                                    <ComboBoxItem>TCP</ComboBoxItem>
+                                </ComboBox>
+                                <TextBlock Grid.Row="1">Machine:</TextBlock>
+                                <TextBox Text="{Binding Machine}" Grid.Row="1" Grid.Column="1"></TextBox>
+                                <TextBlock Grid.Row="2">Listening port:</TextBlock>
+                                <TextBox Text="{Binding DistantPort}" Grid.Row="2" Grid.Column="1" Name="tbDistantPort"></TextBox>
+                            </Grid>
+                            <CheckBox IsChecked="{Binding UseCompression}">Use compression</CheckBox>
+                            <CheckBox IsChecked="{Binding CaptureOnStart}">Capture on start</CheckBox>
+                        </StackPanel>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
+    </Grid>
+</UserControl>

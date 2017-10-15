@@ -1,0 +1,525 @@
+﻿<Fluent:RibbonWindow x:Class="ReflectionStudio.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
+    xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+    xmlns:Controls="clr-namespace:ReflectionStudio.Controls;assembly=ReflectionStudio.Controls"
+    xmlns:UserControls="clr-namespace:ReflectionStudio.Components.UserControls"
+    xmlns:converters="clr-namespace:ReflectionStudio.Components.Converters"
+    ResizeMode="CanResizeWithGrip" Title="{Binding Title}" Height="600" Width="800"
+    Loaded="OfficeWindow_Loaded" Closing="OfficeWindow_Closing" Drop="OfficeWindow_Drop"
+    Icon="Resources\ReflectionStudio.ico" WindowState="Maximized">
+    <Fluent:RibbonWindow.Resources>
+
+        <DataTemplate x:Key="ThemeItemTemplate">
+            <Border ToolTip="{Binding Name}">
+                <StackPanel Orientation="Vertical">
+                    <Image Source="{Binding Image}" Stretch="None"/>
+                    <TextBlock Text="{Binding Path=Name, Mode=OneWay}" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </DataTemplate>
+
+    </Fluent:RibbonWindow.Resources>
+    
+    <Grid Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!--#################################################################################################-->
+        <!--RIBBON CONTROL-->
+        <Fluent:Ribbon Grid.Row="0" HorizontalAlignment="Stretch" Name="ribbonMain" AutomaticStateManagement="True"
+                       Title="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Window}},Path=Title}" >
+
+            <!--#################################################################################################-->
+            <!--Backstage Items-->
+
+            <Fluent:Ribbon.Menu>
+                <Fluent:Backstage Background="Green">
+                    <Fluent:BackstageTabControl>
+
+                        <Fluent:Button Header="Open" Command="Open" SizeDefinition="Small"
+                               Icon="Resources\Images\16x16\folders\open_folder.png"
+                               LargeIcon="Resources\Images\32x32\folders\open_folder.png" />
+                        <Fluent:Button Header="Save" Command="Save"
+                                       Icon="Resources\Images\32x32\application\save.png"
+                                       LargeIcon="Resources\Images\32x32\application\save.png" />
+                        <Fluent:Button Header="Save as" Command="SaveAs"
+                                       Icon="Resources\Images\32x32\application\save_as.png"
+                                       LargeIcon="Resources\Images\32x32\application\save_as.png" />
+
+                        <Fluent:BackstageTabItem Header="New" Fluent:KeyTip.Keys="N">
+                            <Fluent:BackstageTabControl  Margin="20,5,20,5" ItemsSource="{Binding Workspace.RecentFiles}">
+                                <Fluent:BackstageTabControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TabItem Header="{Binding FullName}"></TabItem>
+                                    </DataTemplate>
+                                </Fluent:BackstageTabControl.ItemTemplate>
+                            </Fluent:BackstageTabControl>
+                        </Fluent:BackstageTabItem>
+
+                        <Fluent:BackstageTabItem Header="Info" />
+
+                        <Fluent:BackstageTabItem Header="Recent" Fluent:KeyTip.Keys="R">
+                            <Grid Margin="20,5,20,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Fluent:SeparatorTabItem Header="Files"/>
+                                <ListBox Grid.Row="1" ItemsSource="{Binding Workspace.RecentFiles}"
+                                                         SelectionChanged="RecentFilesTabControl_SelectionChanged">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TabItem Header="{Binding FullName}"></TabItem>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>    
+                                </ListBox>
+                                <Fluent:SeparatorTabItem Grid.Column="1" Header="Folders"/>
+                                <ListBox Grid.Column="1" Grid.Row="1" ItemsSource="{Binding Workspace.RecentFolders}"
+                                                         SelectionChanged="RecentFilesTabControl_SelectionChanged">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TabItem Header="{Binding FullName}"></TabItem>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </Grid>
+                        </Fluent:BackstageTabItem>
+
+                        <Fluent:BackstageTabItem Header="Print" Fluent:KeyTip.Keys="P">
+                        </Fluent:BackstageTabItem>
+
+                        <Fluent:Button Header="Exit" Click="ExitButton_Click"
+                                       Icon="Resources\Images\32x32\exit.png"
+                                       LargeIcon="Resources\Images\32x32\exit.png" />
+                    </Fluent:BackstageTabControl>
+                </Fluent:Backstage>
+            </Fluent:Ribbon.Menu>    
+
+            <!--#################################################################################################-->
+            <!--Contextual Tab Groups-->
+            <Fluent:Ribbon.ContextualGroups>
+                <Fluent:RibbonContextualTabGroup x:Name="SyntaxedDocumentGroup" Header="Documents" Visibility="Collapsed" Background="Red" BorderBrush="Red" />
+            </Fluent:Ribbon.ContextualGroups>
+
+            <!--#################################################################################################-->
+            <!--Quick Access Toolbar Items-->
+            <Fluent:Ribbon.QuickAccessItems>
+                <Fluent:QuickAccessMenuItem Target="{Binding ElementName=btnNewProject}" IsChecked="True"/>
+                <Fluent:QuickAccessMenuItem Target="{Binding ElementName=btnOpenProject}" IsChecked="True"/>
+                <Fluent:QuickAccessMenuItem Target="{Binding ElementName=btnSaveproject}" IsChecked="True"/>
+                <Fluent:QuickAccessMenuItem Target="{Binding ElementName=btnCloseProject}" IsChecked="True"/>
+            </Fluent:Ribbon.QuickAccessItems>
+
+            <Fluent:Ribbon.ToolBarItems>
+                <Fluent:Button Size="Small" Icon="Resources\Images\32x32\application\help.png">
+                    <Fluent:Button.ToolTip>
+                        <Fluent:ScreenTip
+                            Title="Insert Chart"
+                            Text="Insert a chart to illustarate and compare data. &#xa;&#xa;Bar, Pie, Line, Area and Surface are same of the available types."
+                            Image="Resources\Images\32x32\application\help.png"
+                            HelpTopic="http:\\fluent.codeplex.com"
+                            DisableReason="Disable reason reason."
+                            Width="190"
+                            IsRibbonAligned ="True"/>
+                    </Fluent:Button.ToolTip>
+                </Fluent:Button>
+            </Fluent:Ribbon.ToolBarItems>
+
+            <!--#################################################################################################-->
+            <!--################   project tab   ################-->
+            <Fluent:RibbonTabItem Header="Project">
+                <Fluent:RibbonGroupBox Header="Project" IsLauncherVisible="True" LauncherCommand="Open" >
+                    <Fluent:Button Name="btnNewProject" Header="New"  SizeDefinition="Large"
+                                   Icon="Resources\Images\16x16\new_project.png"
+                                   LargeIcon="Resources\Images\32x32\new_project.png" />
+                    <Fluent:Button Name="btnOpenProject" Header="Open" SizeDefinition="Large"
+                                   Icon="Resources\Images\16x16\folders\open_folder.png"
+                                   LargeIcon="Resources\Images\32x32\folders\open_folder.png" />
+                    <Fluent:Button Name="btnSaveproject" Header="Save" SizeDefinition="Large"
+                                   Icon="Resources\Images\16x16\application\save.png"
+                                   LargeIcon="Resources\Images\32x32\application\save.png" />
+                    <Fluent:Button Name="btnSaveAsProject" Header="Save as" SizeDefinition="Large"
+                                   Icon="Resources\Images\16x16\application\save_as.png"
+                                   LargeIcon="Resources\Images\32x32\application\save_as.png" />
+                    <Fluent:Button Name="btnCloseProject" Header="Close" SizeDefinition="Large"
+                                   Icon="Resources\Images\16x16\folders\close_folder.png"
+                                   LargeIcon="Resources\Images\32x32\folders\close_folder.png" />
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="Themes">
+                    <Fluent:InRibbonGallery x:Name="inRibbonGallery_Skin" 
+                                            ItemsSource ="{Binding Themes}"
+                                            ItemTemplate="{StaticResource ThemeItemTemplate}"
+                                            Header="Skins" Fluent:KeyTip.Keys="S" GroupBy="Group" 
+                                            SelectedItem="{Binding CurrentSkin}"
+                                            ResizeMode="Both" MaxItemsInRow="3" MinItemsInRow="1" ItemWidth="60" ItemHeight="55"
+                                            >
+                        <Fluent:InRibbonGallery.Filters>
+                            <Fluent:GalleryGroupFilter Title="All" Groups="Skins" />
+                        </Fluent:InRibbonGallery.Filters>
+                    </Fluent:InRibbonGallery>
+
+                    <Fluent:InRibbonGallery x:Name="inRibbonGallery_Color" 
+                                            ItemsSource ="{Binding Themes}"
+                                            ItemTemplate="{StaticResource ThemeItemTemplate}"
+                                            Header="Colors" Fluent:KeyTip.Keys="C" GroupBy="Group" 
+                                            SelectedItem="{Binding CurrentColor}"
+                                            ResizeMode="Both" MaxItemsInRow="3" MinItemsInRow="1" ItemWidth="40" ItemHeight="55"
+                                            >
+                        <Fluent:InRibbonGallery.Filters>
+                            <Fluent:GalleryGroupFilter Title="All" Groups="Colors" />
+                        </Fluent:InRibbonGallery.Filters>
+                    </Fluent:InRibbonGallery>
+
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="View" >
+
+                    <Fluent:Button Header="Home" Click="HomeButton_Click"
+                                   Icon="Resources\Images\32x32\home.png" LargeIcon="Resources\Images\32x32\home.png" />
+
+                    <Fluent:DropDownButton Header="Help"
+                                           Icon="Resources\Images\32x32\application\help.png"
+                                           LargeIcon="Resources\Images\32x32\application\help.png">
+                        <Fluent:MenuItem Header="User" Command="Help" CommandParameter=".\Help\ReflectionStudio.Help.xps"/>
+                        <Fluent:MenuItem Header="Technical" Command="Help" CommandParameter=".\Help\ReflectionStudio.Technical.xps"/>
+                    </Fluent:DropDownButton>
+                    <Fluent:DropDownButton Header="Explorers"
+                                           Icon="Resources\Images\16x16\Application\increase_ident.png"
+                                           LargeIcon="Resources\Images\16x16\Application\increase_ident.png">
+                        <Fluent:Gallery ItemsSource ="{Binding Panels}" Orientation="Vertical">
+                            <Fluent:Gallery.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <CheckBox Content="{Binding Title}"
+                                          IsChecked="{Binding Path=State, Mode=OneWay,Converter={x:Static converters:DockStateToBooleanConverter.Instance}}"
+                                        Click="ShowExplorerMenuItem_Click">
+                                        </CheckBox>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </Fluent:Gallery.ItemTemplate>
+                        </Fluent:Gallery>
+                    </Fluent:DropDownButton>
+
+                    <Fluent:Button Header="About" Click="AboutButton_Click"
+                                   Icon="Resources\Images\32x32\reflection_studio.png"
+                                   LargeIcon="Resources\Images\32x32\reflection_studio.png" />
+                    
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+
+            <!--################ performance tab ################-->
+            <Fluent:RibbonTabItem Header="Performance">
+
+                <Fluent:RibbonGroupBox Header="Assemblies" >
+                    <Fluent:DropDownButton Header="Add Reference"
+                                           Icon="Resources\Images\32x32\application\help.png"
+                                           LargeIcon="Resources\Images\32x32\application\help.png">
+                        <Fluent:MenuItem Header="from file" />
+                        <Fluent:MenuItem Header="from folder"/>
+                    </Fluent:DropDownButton>
+                    <Fluent:Button Header="Refresh"
+                                   Icon="Resources\Images\32x32\application\help.png"
+                                   LargeIcon="Resources\Images\32x32\application\help.png">
+                    </Fluent:Button>
+                    <Fluent:Button Header="Sign"
+                                   Icon="Resources\Images\32x32\application\help.png"
+                                   LargeIcon="Resources\Images\32x32\application\help.png">
+                    </Fluent:Button>
+                    <Fluent:Button Header="Remove"
+                                   Icon="Resources\Images\32x32\application\help.png"
+                                   LargeIcon="Resources\Images\32x32\application\help.png">
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="Programm" >
+                    <Fluent:ToggleButton Header="Build"
+                                           Icon="Resources\Images\32x32\application\help.png"
+                                           LargeIcon="Resources\Images\32x32\application\help.png">
+                    </Fluent:ToggleButton>
+                    <Fluent:Button Header="Execute"
+                                   Icon="Resources\Images\32x32\application\help.png"
+                                   LargeIcon="Resources\Images\32x32\application\help.png">
+                    </Fluent:Button>
+                    <Fluent:Button Header="Stop"
+                                   Icon="Resources\Images\32x32\application\help.png"
+                                   LargeIcon="Resources\Images\32x32\application\help.png">
+                    </Fluent:Button>
+
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="Capture" >
+                    <Fluent:ToggleButton Name="btnConnected" Header="Take new"
+                                         Icon="Resources\Images\32x32\connect.png"
+                                         LargeIcon="Resources\Images\32x32\connect.png" />
+                    <Fluent:ToggleButton Name="btnStartCapture" Header="Start"
+                                         Icon="Resources\Images\32x32\start_capture.png"
+                                         LargeIcon="Resources\Images\32x32\start_capture.png" />
+                    <Fluent:ToggleButton Name="btnStopCapture" Header="Stop"
+                                         Icon="Resources\Images\32x32\stop_capture.png"
+                                         LargeIcon="Resources\Images\32x32\stop_capture.png" />
+                    <Fluent:ToggleButton Header="Retreive distant"
+                                         Icon="Resources\Images\32x32\stop_capture.png"
+                                         LargeIcon="Resources\Images\32x32\stop_capture.png" />
+                    <Fluent:ToggleButton Header="Delete"
+                                         Icon="Resources\Images\32x32\stop_capture.png"
+                                         LargeIcon="Resources\Images\32x32\stop_capture.png" />
+                </Fluent:RibbonGroupBox>
+
+            </Fluent:RibbonTabItem>
+
+            <!--################ sql query tab   ################-->
+            <Fluent:RibbonTabItem Header="SQL Query" Name="ribbonTabSQLQuery">
+
+                <Fluent:RibbonGroupBox Header="Data source" IsLauncherVisible="True" LauncherCommand="{x:Static UserControls:DatabaseExplorer.DataSourceAdd}">
+
+                    <Fluent:Button Header="New" ToolTip="Create a new data source connection"
+                                   Icon="Resources\Images\16x16\database\new_db.png"
+                                   LargeIcon="Resources\Images\32x32\database\new_db.png"
+                                   Command="{x:Static UserControls:DatabaseExplorer.DataSourceAdd}"/>
+                    <Fluent:Button Header="Refresh"  ToolTip="Refresh the whole data source"
+                                   Icon="Resources\Images\16x16\application\refresh.png"
+                                   LargeIcon="Resources\Images\32x32\application\refresh.png"
+                                   Command="{x:Static UserControls:DatabaseExplorer.DataSourceRefresh}"/>
+                    <Fluent:Button Header="Remove" ToolTip="Remove the actual data source from the workspace"
+                                   Icon="Resources\Images\16x16\application\delete.png"
+                                   LargeIcon="Resources\Images\32x32\application\delete.png" 
+                                   Command="{x:Static UserControls:DatabaseExplorer.DataSourceRemove}"/>
+
+                    <Fluent:Button Header="Check Quality" ToolTip="Check the databse against naming and performance rules"
+                                   Icon="Resources\Images\32x32\application\save.png"
+                                   LargeIcon="Resources\Images\32x32\application\save.png"
+                                   Command="{x:Static UserControls:DatabaseExplorer.QueryControlQuality}"/>
+
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="Query" IsLauncherVisible="False" >
+
+                    <Fluent:Button Header="New" ToolTip="Open a new query document"
+                                   Icon="Resources\Images\32x32\database\query_new.png"
+                                   LargeIcon="Resources\Images\32x32\database\query_new.png"
+                                   Command="{x:Static UserControls:DatabaseExplorer.QueryNewEditor}" />
+
+                    <Fluent:DropDownButton Header="Mode"
+                                           Icon="Resources\Images\32x32\database\query_output.png"
+                                           LargeIcon="Resources\Images\32x32\database\query_output.png">
+                        <Fluent:MenuItem Header="Grid" Command="{x:Static UserControls:QueryDocument.OutputQueryMode}" CommandParameter="Grid"/>
+                        <Fluent:MenuItem Header="Text" Command="{x:Static UserControls:QueryDocument.OutputQueryMode}" CommandParameter="Text"/>
+                    </Fluent:DropDownButton>
+
+                    <Fluent:Button Header="Check" ToolTip="Check the current query"
+                                   Icon="Resources\Images\32x32\database\query_check.png"
+                                   LargeIcon="Resources\Images\32x32\database\query_check.png"
+                                   Command="{x:Static UserControls:QueryDocument.CheckQuery}" />
+                    <Fluent:Button Header="Execute" ToolTip="Run the current query"
+                                   Icon="Resources\Images\32x32\database\query_run.png"
+                                   LargeIcon="Resources\Images\32x32\database\query_run.png"
+                                   Command="{x:Static UserControls:QueryDocument.ExecuteQuery}" />
+                    <Fluent:Button Header="Stop" ToolTip="Stop the currently running query"
+                                   Icon="Resources\Images\32x32\database\query_stop.png"
+                                   LargeIcon="Resources\Images\32x32\database\query_stop.png"
+                                   Command="{x:Static UserControls:QueryDocument.StopExecuteQuery}" />
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="Contextual" IsLauncherVisible="False" >
+                    <Fluent:Button Header="Design"
+                                   Icon="Resources\Images\32x32\application\save.png"
+                                   LargeIcon="Resources\Images\32x32\application\save.png"
+                                   Command="{x:Static UserControls:QueryDocument.StopExecuteQuery}" />
+                    <Fluent:Button Header="New"
+                                   Icon="Resources\Images\32x32\application\save.png"
+                                   LargeIcon="Resources\Images\32x32\application\save.png"
+                                   Command="{x:Static UserControls:QueryDocument.StopExecuteQuery}" />
+                    <Fluent:Button Header="Properties"
+                                   Icon="Resources\Images\32x32\application\save.png"
+                                   LargeIcon="Resources\Images\32x32\application\save.png"
+                                   Command="{x:Static UserControls:QueryDocument.CheckQuery}" />
+                    <Fluent:Button Header="Scripting"
+                                   Icon="Resources\Images\32x32\application\save.png"
+                                   LargeIcon="Resources\Images\32x32\application\save.png"
+                                   Command="{x:Static UserControls:QueryDocument.CheckQuery}" />
+                    <Fluent:Button Header="Delete"
+                                   Icon="Resources\Images\32x32\application\save.png"
+                                   LargeIcon="Resources\Images\32x32\application\save.png"
+                                   Command="{x:Static UserControls:QueryDocument.ExecuteQuery}" />
+                </Fluent:RibbonGroupBox>
+
+            </Fluent:RibbonTabItem>
+
+            <!--################  template tab   ################-->
+            <Fluent:RibbonTabItem Header="Template" Name="ribbonTabTemplate">
+                <Fluent:RibbonGroupBox Header="File" IsLauncherVisible="False" >
+                    <Fluent:Button Header="New"
+                                   Icon="Resources\Images\32x32\application\save.png"
+                                   LargeIcon="Resources\Images\32x32\application\save.png" />
+                    <Fluent:Button Header="Save"
+                                   Icon="Resources\Images\32x32\application\save.png"
+                                   LargeIcon="Resources\Images\32x32\application\save.png" />
+                    <Fluent:Button Header="Save as"
+                                   Icon="Resources\Images\32x32\application\save_as.png"
+                                   LargeIcon="Resources\Images\32x32\application\save_as.png" />
+                    <Fluent:Button Header="Close"
+                                   Icon="Resources\Images\16x16\folders\close_folder.png"
+                                   LargeIcon="Resources\Images\32x32\folders\close_folder.png" />
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox Header="Build" IsLauncherVisible="False" >
+                    <Fluent:Button Header="Check Syntax"
+                                   Icon="Resources\Images\32x32\application\save.png"
+                                   LargeIcon="Resources\Images\32x32\application\save.png" />
+                    <Fluent:Button Header="Build"
+                                   Icon="Resources\Images\32x32\application\save.png"
+                                   LargeIcon="Resources\Images\32x32\application\save.png" />
+                    <Fluent:Button Header="Test output"
+                                   Icon="Resources\Images\32x32\application\save_as.png"
+                                   LargeIcon="Resources\Images\32x32\application\save_as.png" />
+                    <Fluent:Button Header="Tag Explorer"
+                                   Icon="Resources\Images\16x16\folders\close_folder.png"
+                                   LargeIcon="Resources\Images\32x32\folders\close_folder.png" />
+                </Fluent:RibbonGroupBox>
+
+            </Fluent:RibbonTabItem>
+
+            <!--#################################################################################################-->
+            <!-- Contextual Tabs -->
+
+            <Fluent:RibbonTabItem Header="Text Editor" Group="{Binding ElementName=SyntaxedDocumentGroup}" Name="ribbonTabEditor">
+
+                <Fluent:RibbonGroupBox Header="Clipboard" IsLauncherVisible="False" Fluent:KeyTip.Keys="C">
+                    <Fluent:Button Header="Paste" Command="Paste"
+                                   SizeDefinition="Large" Fluent:KeyTip.Keys="V"
+                                   Icon="Resources\Images\16x16\application\paste.png"
+                                   LargeIcon="Resources\Images\32x32\application\paste.png" />
+                    <Fluent:Button Header="Cut" Command="Cut"
+                                   SizeDefinition="Middle,Small" Fluent:KeyTip.Keys="X"
+                                   Icon="Resources\Images\16x16\application\cut.png"
+                                   LargeIcon="Resources\Images\32x32\application\cut.png" />
+                    <Fluent:Button Header="Copy" Command="Copy"
+                                   SizeDefinition="Middle,Small" Fluent:KeyTip.Keys="C"
+                                   Icon="Resources\Images\16x16\application\copy.png"
+                                   LargeIcon="Resources\Images\32x32\application\copy.png" />
+                </Fluent:RibbonGroupBox>
+
+                
+
+                <Fluent:RibbonGroupBox Header="Undo/Redo" IsLauncherVisible="False" >
+                    <Fluent:Button Header="Undo" Command="Undo"
+                                   SizeDefinition="Large,Middle,Small" Fluent:KeyTip.Keys="Z"
+                                   Icon="Resources\Images\16x16\application\undo.png"
+                                   LargeIcon="Resources\Images\32x32\application\undo.png" />
+                    <Fluent:Button Header="Redo" Command="Redo"
+                                   SizeDefinition="Large,Middle,Small" Fluent:KeyTip.Keys="C"
+                                   Icon="Resources\Images\16x16\application\redo.png"
+                                   LargeIcon="Resources\Images\32x32\application\redo.png" />
+                </Fluent:RibbonGroupBox>
+                
+                <Fluent:RibbonGroupBox Header="Format" IsLauncherVisible="False" >
+
+                    <Fluent:Button Header="Comment" Command="Paste"
+                                   SizeDefinition="Middle,Small" 
+                                   Icon="Resources\Images\16x16\editor\comment.png"
+                                   LargeIcon="Resources\Images\16x16\editor\comment.png" />
+                    <Fluent:Button Header="Uncomment" Command="Paste"
+                                   SizeDefinition="Middle,Small" 
+                                   Icon="Resources\Images\16x16\editor\uncomment.png"
+                                   LargeIcon="Resources\Images\16x16\editor\uncomment.png" />
+
+                    <Fluent:Button Header="Increase identation" Command="Paste"
+                                   SizeDefinition="Middle,Small" 
+                                   Icon="Resources\Images\16x16\editor\increase_ident.png"
+                                   LargeIcon="Resources\Images\16x16\editor\increase_ident.png" />
+                    <Fluent:Button Header="Decrease identation" Command="Paste"
+                                   SizeDefinition="Middle,Small" 
+                                   Icon="Resources\Images\16x16\editor\decrease_ident.png"
+                                   LargeIcon="Resources\Images\16x16\editor\decrease_ident.png" />
+                    
+                </Fluent:RibbonGroupBox>
+
+            </Fluent:RibbonTabItem>
+
+        </Fluent:Ribbon>    
+
+        <!--#################################################################################################-->
+        <!--CONTENT-->
+        <ad:DockingManager Grid.Row="1" x:Name="_dockingManager" Loaded="_dockingManager_Loaded">
+                <ad:ResizingPanel Orientation="Vertical">
+                    <ad:ResizingPanel Orientation="Horizontal">
+                        <ad:ResizingPanel Orientation="Vertical" ad:ResizingPanel.ResizeWidth="200">
+
+                            <!--#################################################################################################-->
+                            <!--LEFT PART-->
+                            <ad:DockablePane>
+
+                                <!--#################################################################################################-->
+                                <!--ASSEMBLY EXPLORER -->
+                                <UserControls:AssemblyExplorer x:Name="_DllExplorerDock" />
+
+                                <!--#################################################################################################-->
+                                <!--DATABASE EXPLORER -->
+                                <UserControls:DatabaseExplorer x:Name="_DBExplorerDock" />
+
+                                <!--#################################################################################################-->
+                                <!--DATABASE EXPLORER -->
+                                <UserControls:TemplateExplorer x:Name="_TemplateExplorerDock" />
+
+                            </ad:DockablePane>
+                        
+                        </ad:ResizingPanel>
+
+                        <!--#################################################################################################-->
+                        <!--CENTER PART-->
+                        <ad:DocumentPane x:Name="_documentsHost">
+
+                            <!--<UserControls:AssemblyDiagramViewer Title="test"></UserControls:AssemblyDiagramViewer>
+                            <UserControls:HomeDocument Closed="DocumentClosed" Closing="DocumentClosing"></UserControls:HomeDocument>-->
+
+                        </ad:DocumentPane>
+
+                        <ad:ResizingPanel Orientation="Vertical" ad:ResizingPanel.ResizeWidth="200">
+
+                            <!--#################################################################################################-->
+                            <!--RIGHT PART-->
+                            <ad:DockablePane>
+
+                                <!--#################################################################################################-->
+                                <!--PROJECT EXPLORER-->
+                                <UserControls:ProjectExplorer x:Name="_ProjectExplorerDock" />
+
+                                <!--#################################################################################################-->
+                                <!--PROPERTY EXPLORER-->
+                                <UserControls:PropertyExplorer x:Name="_PropertyExplorerDock" />
+
+                            </ad:DockablePane>
+
+                        </ad:ResizingPanel>
+                    </ad:ResizingPanel>
+
+                    <ad:ResizingPanel Orientation="Horizontal">
+
+                        <!--#################################################################################################-->
+                        <!--LOGS EXPLORER-->
+                        <ad:DockablePane>
+                            <UserControls:EventLogExplorer x:Name="_LogExplorerDock" />
+                        </ad:DockablePane>
+                    </ad:ResizingPanel>
+
+                </ad:ResizingPanel>
+                
+            </ad:DockingManager>
+
+        <!--#################################################################################################-->
+        <!--STATUS BAR-->    
+        <UserControls:StatusBar Grid.Row="2" x:Name="MainStatusBar" />
+        
+    </Grid>
+
+</Fluent:RibbonWindow>

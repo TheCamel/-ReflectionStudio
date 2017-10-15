@@ -1,0 +1,79 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ReflectionStudio.Controls.Property"
+    xmlns:ucc="clr-namespace:ReflectionStudio.Controls"
+    xmlns:clr="clr-namespace:System;assembly=mscorlib"
+    xmlns:clr2="clr-namespace:System.Collections;assembly=mscorlib" 
+>
+
+    <local:PropertyTemplateSelector x:Key="propertyTemplateSelector" />
+    <local:EnumTypeConverter x:Key="enumTypeConverter" />
+
+    <DataTemplate DataType="{x:Type local:PropertyCategory}">
+        <Expander IsExpanded="true" Header="{Binding Category}">
+            <ItemsControl ItemsSource="{Binding Items}" />
+        </Expander>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type local:PropertyItem}">
+        <DockPanel Margin="4">
+            <TextBlock DockPanel.Dock="Left" Width="80" Margin="0,0,8,0" TextAlignment="Right" VerticalAlignment="Center"
+                           Text="{Binding Name, Mode=OneTime}" ToolTip="{Binding Name, Mode=OneTime}" />
+            <ContentControl VerticalAlignment="Center" ContentTemplateSelector="{StaticResource propertyTemplateSelector}"
+                                Content="{Binding Mode=OneWay}" />
+        </DockPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{ComponentResourceKey ResourceId=default, TypeInTargetAssembly={x:Type ucc:PropertyGrid}}">
+        <TextBox IsReadOnly="{Binding IsReadOnly}">
+            <Binding Mode="TwoWay" Path="Value">
+                <Binding.ValidationRules>
+                    <ExceptionValidationRule />
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{ComponentResourceKey ResourceId={x:Type clr:Boolean}, TypeInTargetAssembly={x:Type ucc:PropertyGrid}}">
+        <CheckBox IsEnabled="{Binding IsWriteable}" IsChecked="{Binding Value}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{ComponentResourceKey ResourceId={x:Type clr2:IList}, TypeInTargetAssembly={x:Type ucc:PropertyGrid}}">
+        <ListBox ItemsSource="{Binding Value}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{ComponentResourceKey ResourceId={x:Type clr:Enum}, TypeInTargetAssembly={x:Type ucc:PropertyGrid}}">
+        <ComboBox SelectedValue="{Binding Value}" ItemsSource="{Binding Value, Converter={StaticResource enumTypeConverter}}" />
+    </DataTemplate>
+
+    <Style x:Key="{x:Type ucc:PropertyGrid}" TargetType="{x:Type ucc:PropertyGrid}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ucc:PropertyGrid}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <DockPanel Height="23" Grid.Row="0" Margin="2">
+                            <Button Content="Cat"/>
+                            <Button Content="Alpha"/>
+                            <Label Content="Search:" VerticalAlignment="Center" />
+                            <TextBox/>
+                        </DockPanel>
+                        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel>
+                                <ItemsControl ItemsSource="{TemplateBinding Properties}" />
+                            </StackPanel>
+                        </ScrollViewer>
+                        <Border Grid.Row="2" BorderThickness="1" BorderBrush="Silver">
+                            <TextBlock Text="ezrk zrelkjezrlk ezlkrjzelrkj ez" TextWrapping="WrapWithOverflow" DataContext="{Binding}" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

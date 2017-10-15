@@ -1,0 +1,402 @@
+<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:xrd="clr-namespace:CodeReason.Reports.Document;assembly=CodeReason.Reports"
+              PageHeight="29.7cm" PageWidth="21cm" ColumnWidth="21cm">
+
+    <FlowDocument.Resources>
+        <RotateTransform x:Key="RenderTransform1" Angle="90" />
+    </FlowDocument.Resources>
+    
+    <xrd:ReportProperties>
+        <xrd:ReportProperties.ReportName>DBQualityReport</xrd:ReportProperties.ReportName>
+        <xrd:ReportProperties.ReportTitle>Database Quality Report for SQL Server</xrd:ReportProperties.ReportTitle>
+    </xrd:ReportProperties>
+    
+    <xrd:SectionReportHeader PageHeaderHeight="2" Padding="10,10,10,0" FontSize="10">
+        <Table CellSpacing="0">
+            <Table.Columns>
+                <TableColumn Width="*" />
+                <TableColumn Width="*" />
+            </Table.Columns>
+            <TableRowGroup>
+                <TableRow>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineContextValue PropertyName="ReportTitle" /> No.
+                            <xrd:InlineDocumentValue PropertyName="Server" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Right">
+                            <xrd:InlineDocumentValue PropertyName="GenerationTime" Format="dd.MM.yyyy HH:mm:ss" />
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+            </TableRowGroup>
+        </Table>
+    </xrd:SectionReportHeader>
+    
+    <xrd:SectionReportFooter PageFooterHeight="4" Padding="10,0,10,10" FontSize="10">
+        <Table CellSpacing="0">
+            <Table.Columns>
+                <TableColumn Width="*" />
+                <TableColumn Width="*" />
+            </Table.Columns>
+            <TableRowGroup>
+                <TableRow>
+                    <TableCell>
+                        <Paragraph>
+                            Reflection Studio (c)
+                      </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Right">
+                            Page
+                            <xrd:InlineContextValue PropertyName="PageNumber" FontWeight="Bold" /> of
+                            <xrd:InlineContextValue PropertyName="PageCount" FontWeight="Bold" />
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+            </TableRowGroup>
+        </Table>
+    </xrd:SectionReportFooter>
+    
+    <Section Padding="80,20,40,10" FontSize="12" BreakPageBefore="True">
+
+        <Paragraph FontSize="24" FontWeight="Bold">
+            Database quality report for SQL Server 2K
+        </Paragraph>
+
+        <Paragraph FontSize="24" FontWeight="Bold">
+            <xrd:InlineContextValue PropertyName="ReportTitle" /> No.
+            <xrd:InlineDocumentValue PropertyName="Server" />
+        </Paragraph>
+        <Paragraph>The database quality reports in two tables the objects that are not compliant to naming and performance rules.</Paragraph>
+        
+        
+        <Paragraph FontSize="18" FontWeight="Bold">Table's summary</Paragraph>
+        <Table CellSpacing="0" BorderBrush="Black" BorderThickness="0.02cm">
+            <Table.Resources>
+                <!-- Style for header/footer rows. -->
+                <Style x:Key="headerFooterRowStyle" TargetType="{x:Type TableRowGroup}">
+                    <Setter Property="FontWeight" Value="DemiBold"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="Background" Value="LightGray"/>
+                </Style>
+
+                <!-- Style for data rows. -->
+                <Style x:Key="dataRowStyle" TargetType="{x:Type TableRowGroup}">
+                    <Setter Property="FontSize" Value="12"/>
+                </Style>
+
+                <!-- Style for data cells. -->
+                <Style TargetType="{x:Type TableCell}">
+                    <Setter Property="Padding" Value="0.1cm"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="0.01cm"/>
+                </Style>
+            </Table.Resources>
+
+            <Table.Columns>
+                <TableColumn Width="0.5*" />
+                <TableColumn Width="1.5*" />
+            </Table.Columns>
+            
+            <TableRowGroup Style="{StaticResource headerFooterRowStyle}">
+                <TableRow>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>Name</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>Row count</Bold>
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+            </TableRowGroup>
+            <TableRowGroup Style="{StaticResource dataRowStyle}">
+                <xrd:TableRowForDataTable TableName="Tables">
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="NAME" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="ROW_COUNT" />
+                        </Paragraph>
+                    </TableCell>
+                </xrd:TableRowForDataTable>
+            </TableRowGroup>
+        </Table>
+        <Paragraph>
+            There are
+            <xrd:InlineAggregateValue AggregateGroup="ItemCount" AggregateValueType="Count" EmptyValue="no" FontWeight="Bold" /> objects are not compliant over
+            <xrd:InlineAggregateValue AggregateGroup="ItemCount" AggregateValueType="Sum" EmptyValue="0" FontWeight="Bold" /> items listed.
+        </Paragraph>
+
+        <Paragraph FontSize="20" FontWeight="Bold">Procedure's summary</Paragraph>
+        <Table CellSpacing="0" BorderBrush="Black" BorderThickness="0.02cm">
+            <Table.Resources>
+                <!-- Style for header/footer rows. -->
+                <Style x:Key="headerFooterRowStyle" TargetType="{x:Type TableRowGroup}">
+                    <Setter Property="FontWeight" Value="DemiBold"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="Background" Value="LightGray"/>
+                </Style>
+
+                <!-- Style for data rows. -->
+                <Style x:Key="dataRowStyle" TargetType="{x:Type TableRowGroup}">
+                    <Setter Property="FontSize" Value="12"/>
+                </Style>
+
+                <!-- Style for data cells. -->
+                <Style TargetType="{x:Type TableCell}">
+                    <Setter Property="Padding" Value="0.1cm"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="0.01cm"/>
+                </Style>
+            </Table.Resources>
+
+            <Table.Columns>
+                <TableColumn Width="Auto" />
+                <TableColumn Width="Auto" />
+                <TableColumn Width="Auto" />
+                <TableColumn Width="Auto" />
+            </Table.Columns>
+
+            <TableRowGroup Style="{StaticResource headerFooterRowStyle}">
+                <TableRow>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>Name</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>Length</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>Naming</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>Select All</Bold>
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+            </TableRowGroup>
+            <TableRowGroup Style="{StaticResource dataRowStyle}">
+                <xrd:TableRowForDataTable TableName="Procedures">
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="NAME" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="LENGTH" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="NAMING" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="SELECT_ALL" />
+                        </Paragraph>
+                    </TableCell>
+                </xrd:TableRowForDataTable>
+            </TableRowGroup>
+
+        </Table>
+        <Paragraph>
+            There are
+            <xrd:InlineAggregateValue AggregateGroup="ItemCount,ItemCount2" AggregateValueType="Sum" EmptyValue="no" FontWeight="Bold" /> items in both tables.
+        </Paragraph>
+
+
+        <Paragraph FontSize="20" FontWeight="Bold">Procedure's performance summary</Paragraph>
+        
+        <Table CellSpacing="0" BorderBrush="Black" BorderThickness="0.02cm">
+            <Table.Resources>
+                <!-- Style for header/footer rows. -->
+                <Style x:Key="headerFooterRowStyle" TargetType="{x:Type TableRowGroup}">
+                    <Setter Property="FontWeight" Value="DemiBold"/>
+                    <Setter Property="FontSize" Value="10"/>
+                    <Setter Property="Background" Value="LightGray"/>
+                </Style>
+
+                <!-- Style for data rows. -->
+                <Style x:Key="dataRowStyle" TargetType="{x:Type TableRowGroup}">
+                    <Setter Property="FontSize" Value="10"/>
+                </Style>
+
+                <!-- Style for data cells. -->
+                <Style TargetType="{x:Type TableCell}">
+                    <Setter Property="Padding" Value="0.1cm"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="0.01cm"/>
+                </Style>
+            </Table.Resources>
+
+            <Table.Columns>
+                <TableColumn Width="Auto" />
+                <TableColumn Width="Auto" />
+                <TableColumn Width="Auto" />
+                <TableColumn Width="Auto" />
+            </Table.Columns>
+
+            <TableRowGroup Style="{StaticResource headerFooterRowStyle}">
+                <TableRow>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>Name</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>Count</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <Paragraph.TextEffects>
+                                <TextEffect Transform="{StaticResource RenderTransform1}" />
+                            </Paragraph.TextEffects>
+                            <Bold>Cursor</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>!Exist</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>Distinct</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>!In</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>CaseWhen</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>Goto</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>SupEgal</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>InfEgal</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>TempTable</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>Top</Bold>
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph TextAlignment="Center">
+                            <Bold>InSelect</Bold>
+                        </Paragraph>
+                    </TableCell>
+                </TableRow>
+            </TableRowGroup>
+            <TableRowGroup Style="{StaticResource dataRowStyle}">
+                <xrd:TableRowForDataTable TableName="Procedures">
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="NAME" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="COUNT" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="CURSOR" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="NOT_EXIST" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="DISTINCT" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="NOT_IN" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="CASE_WHEN" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="GOTO" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="SUP_EGAL" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="INF_EGAL" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="TEMP_TABLE" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="TOP" />
+                        </Paragraph>
+                    </TableCell>
+                    <TableCell>
+                        <Paragraph>
+                            <xrd:InlineTableCellValue PropertyName="IN_SELECT" />
+                        </Paragraph>
+                    </TableCell>
+                </xrd:TableRowForDataTable>
+            </TableRowGroup>
+        </Table>
+
+    </Section>
+</FlowDocument>
+

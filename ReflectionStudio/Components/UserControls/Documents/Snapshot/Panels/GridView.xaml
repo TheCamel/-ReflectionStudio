@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="ReflectionStudio.Components.UserControls.GridView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit"
+    xmlns:Core="clr-namespace:ReflectionStudio.Core.Project;assembly=ReflectionStudio.Core"
+    >
+    <my:DataGrid Grid.Row="1" Name="dataGridSnap" ItemsSource="{Binding CallstackEx}"
+            AutoGenerateColumns="False" IsSynchronizedWithCurrentItem="True" CanUserSortColumns="True"
+            EnableRowVirtualization="True" EnableColumnVirtualization="True" >
+        <!-- Column definition -->
+        <my:DataGrid.Columns>
+            <my:DataGridTextColumn Header="Handle" Width="SizeToCells"  Binding="{Binding MethodHandle, Mode=OneWay}" />
+            <my:DataGridTextColumn Header="Method" Width="Auto"  Binding="{Binding MethodName, Mode=OneWay}" />
+            <my:DataGridTextColumn Header="Total Tick" Width="SizeToCells"  Binding="{Binding TotalTick, Mode=OneWay}" />
+            <my:DataGridTextColumn Header="Internal Tick" Width="SizeToCells"  Binding="{Binding InternalTick, Mode=OneWay}" />
+            <my:DataGridTextColumn Header="Called By" Width="Auto"  Binding="{Binding CalledBy, Mode=OneWay}" />
+            <my:DataGridTextColumn Header="Called By (Handle)" Width="SizeToCells"  Binding="{Binding CalledByHandle, Mode=OneWay}" />
+        </my:DataGrid.Columns>
+    </my:DataGrid>
+</UserControl>

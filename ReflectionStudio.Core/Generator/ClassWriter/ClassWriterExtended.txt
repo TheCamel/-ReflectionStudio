@@ -1,0 +1,42 @@
+using System;
+using System.Data;
+
+using VSNetPlus.Core.Project;
+using VSNetPlus.Core.Project.Generator.ClassWriter;
+using VSNetPlus.DB.Interface;
+
+///
+/// this is the global namespace for all ClassWriter
+/// 
+namespace ReflectionStudio.Core.Generator.CompiledTemplates
+{
+	/// <summary>
+	/// Extend ClassWriter and override the "generate" function which contains the 
+	/// code to write the final text which compose the class to generate
+	/// </summary>
+	public class ClassWriter<#DOM#> : ClassWriter
+	{
+		public ClassWriter<#DOM#>(): base()
+		{
+		}
+		
+		protected string GetDbType( string sDataType )
+		{
+		    return Project.Instance.DBReader.DataConverter.GetDbType( sDataType );
+		}
+
+		override public void Generate()
+		{
+			try
+			{
+				if( _StreamWriter == null )
+					return;
+				
+				<#CODE#>
+			}
+			catch( Exception err )
+			{
+			}
+		}
+	}
+}

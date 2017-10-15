@@ -1,0 +1,13 @@
+﻿<ad:DocumentContent x:Class="ReflectionStudio.Components.UserControls.ProjectDocument"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+    xmlns:Controls="clr-namespace:ReflectionStudio.Controls;assembly=ReflectionStudio.Controls"
+    xmlns:Panels="clr-namespace:ReflectionStudio.Components.UserControls"
+    Name="_docProject" Title="Project">
+    <Grid>
+        <Panels:BuildOption x:Name="OptionPanel" Visibility="Hidden"></Panels:BuildOption>
+        <Panels:AssemblyDetail x:Name="TargetPanel" Visibility="Hidden"></Panels:AssemblyDetail>
+        <Panels:SumerizeBuild x:Name="BuildPanel" Visibility="Hidden"></Panels:SumerizeBuild>
+    </Grid>
+</ad:DocumentContent>

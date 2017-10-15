@@ -1,0 +1,37 @@
+﻿<ThemeElementCollection>
+  <!--COLORS-->
+  <ThemeElement Group="Colors" Name="Black" IsDefault="true" IsSelected="false" Image="/ReflectionStudio;component/Resources/Images/32x32/color.png">
+    <Dictionary>/ReflectionStudio.Controls;component/Resources/Colors/Colors.Black.xaml</Dictionary>
+    <Dictionary>/Fluent;component/Themes/Office2010/Common.xaml</Dictionary>
+    <Dictionary>/Fluent;component/Themes/Office2010/Colors/ColorsBlack.xaml</Dictionary>
+  </ThemeElement>
+  <ThemeElement Group="Colors" Name="Blue" IsDefault="false" IsSelected="false" Image="/ReflectionStudio;component/Resources/Images/32x32/color.png">
+    <Dictionary>/ReflectionStudio.Controls;component/Resources/Colors/Colors.Blue.xaml</Dictionary>
+    <Dictionary>/Fluent;component/Themes/Office2010/Common.xaml</Dictionary>
+    <Dictionary>/Fluent;component/Themes/Office2010/Colors/ColorsBlue.xaml</Dictionary>
+  </ThemeElement>
+  <ThemeElement Group="Colors" Name="Silver" IsDefault="false" IsSelected="false" Image="/ReflectionStudio;component/Resources/Images/32x32/color.png">
+    <Dictionary>/ReflectionStudio.Controls;component/Resources/Colors/Colors.Silver.xaml</Dictionary>
+    <Dictionary>/Fluent;component/Themes/Office2010/Common.xaml</Dictionary>
+    <Dictionary>/Fluent;component/Themes/Office2010/Colors/ColorsSilver.xaml</Dictionary>
+  </ThemeElement>
+  <!--SKINS-->
+  <ThemeElement Group="Skins" Name="Glossy" IsDefault="true" IsSelected="false" Image="/ReflectionStudio;component/Resources/Images/32x32/skin.png">
+    <Dictionary>/AvalonDock;component/themes/generic.xaml</Dictionary>
+    <Dictionary>/ReflectionStudio.Controls;component/Resources/Skins/Glossy.xaml</Dictionary>
+    <Dictionary>/ReflectionStudio;component/Resources/Dictionnaries/AvalonDock.Glossy.xaml</Dictionary>
+    <Dictionary>/ReflectionStudio;component/Resources/AssemblyDesignerItem.xaml</Dictionary>
+  </ThemeElement>
+  <ThemeElement Group="Skins" Name="Blend" IsDefault="false" IsSelected="false" Image="/ReflectionStudio;component/Resources/Images/32x32/skin_blend.png">
+    <Dictionary>/AvalonDock;component/themes/generic.xaml</Dictionary>
+    <Dictionary>/ReflectionStudio.Controls;component/Resources/Skins/Blend.xaml</Dictionary>
+    <Dictionary>/ReflectionStudio;component/Resources/Dictionnaries/AvalonDock.Expression.xaml</Dictionary>
+    <Dictionary>/ReflectionStudio;component/Resources/AssemblyDesignerItem.xaml</Dictionary>
+  </ThemeElement>
+  <ThemeElement Group="Skins" Name="Visual Studio" IsDefault="false" IsSelected="false" Image="/ReflectionStudio;component/Resources/Images/32x32/skin_studio.png">
+    <Dictionary>/AvalonDock;component/themes/generic.xaml</Dictionary>
+    <Dictionary>/ReflectionStudio.Controls;component/Resources/Skins/VisualStudio.xaml</Dictionary>
+    <Dictionary>/ReflectionStudio;component/Resources/Dictionnaries/AvalonDock.Studio.xaml</Dictionary>
+    <Dictionary>/ReflectionStudio;component/Resources/AssemblyDesignerItem.xaml</Dictionary>
+  </ThemeElement>
+</ThemeElementCollection>

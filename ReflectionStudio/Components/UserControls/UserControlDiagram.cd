@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ReflectionStudio.Components.UserControls.StatusBar" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAEAABAAAAAAAAAAAAAAQAAIAAQAAAAIAACgAAAAAAA=</HashCode>
+      <FileName>Components\UserControls\StatusBar\StatusBar.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.ZoomRoutedEventArgs" Collapsed="true">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UserControls\StatusBar\StatusBar.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.TemplateExplorer" Collapsed="true">
+    <Position X="4.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAICABAAIAAAAAQAAAAACAAAACAAACI=</HashCode>
+      <FileName>Components\UserControls\Explorers\TemplateExplorer.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.AssemblyExplorer" Collapsed="true">
+    <Position X="0.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgACAAAAAABAAAAAAAAAAEiAAACAAACAAAABAAAQA=</HashCode>
+      <FileName>Components\UserControls\Explorers\AssemblyExplorer.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.DatabaseExplorer" Collapsed="true">
+    <Position X="2.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GECDAEQNACBOQAkAACBA0iABgAACgBgOGQACACxCBAU=</HashCode>
+      <FileName>Components\UserControls\Explorers\DatabaseExplorer.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.EventLogExplorer" Collapsed="true">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAIAAAAAAAAAAAAAAFAAAACACAAAAAAAA=</HashCode>
+      <FileName>Components\UserControls\Explorers\EventLogExplorer.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.ProjectExplorer" Collapsed="true">
+    <Position X="0.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIQAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Components\UserControls\Explorers\ProjectExplorer.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.PropertyExplorer" Collapsed="true">
+    <Position X="2.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UserControls\Explorers\PropertyExplorer.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.ZoomDocument" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAAAAAAAAAAYAgAAIAgACAAAAAAAAIAEAAAgAAAAA=</HashCode>
+      <FileName>Components\UserControls\Documents\ZoomDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.TemplateDocument" Collapsed="true">
+    <Position X="2.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIACAAAAIAAAAAAAAAAAAAAAAAAAAAQAAAAAAgA=</HashCode>
+      <FileName>Components\UserControls\Documents\Template\TemplateDocument.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.SnapshotViewDocument" Collapsed="true">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAgAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Components\UserControls\Documents\Snapshot\SnapshotViewDocument.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.AssemblyDiagramViewer" Collapsed="true">
+    <Position X="4.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UserControls\Documents\Reflection\AssemblyDiagramViewer.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.ProjectDocument" Collapsed="true">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAA=</HashCode>
+      <FileName>Components\UserControls\Documents\Project\ProjectDocument.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.HomeDocument" Collapsed="true">
+    <Position X="4" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAACCAAAAAAAAAACAABAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Components\UserControls\Documents\General\HomeDocument.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.HelpDocument" Collapsed="true">
+    <Position X="2.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\UserControls\Documents\General\HelpDocument.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReflectionStudio.Components.UserControls.QueryDocument" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAAKAAACgBAUoAAkAAAoEAEIAAKAICBIAIAQACRCgA=</HashCode>
+      <FileName>Components\UserControls\Documents\Database\QueryDocument.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AvalonDock.DocumentContent" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="AvalonDock.DockableContent" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
